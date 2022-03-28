@@ -122,6 +122,11 @@ namespace Armament
             NumarArmament = _NumarArmament;
         }
         /*------------Sfarsit metode SET-----------------*/
+        public string InformatiiArmament()
+        {
+            return $" Categorie: {GetCategorie()} \n Model: {GetModel()} \n Tip: {GetTip()} \n Calibru: {GetCalibru()} \n Detalii armament: {GetDetalii()} \n Cantitate: {GetNumarArmament()}";
+        }
+
         public Arme(string linieFisier)
         {
             var dateFisier = linieFisier.Split(SEPARATOR_PRINCIPAL_FISIER);

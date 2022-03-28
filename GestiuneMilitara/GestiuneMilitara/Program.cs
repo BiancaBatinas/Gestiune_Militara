@@ -21,9 +21,9 @@ namespace AplicatieDeGestiune
             AdministrareSoldati.GetSoldati(out nrSoldati);
             AdministrareArmament.Get_Armament(out nrArmament);
 
-
             Soldati soldat = new Soldati();
             Arme Arme = new Arme();
+
             string optiune;
             do
             {
@@ -35,6 +35,7 @@ namespace AplicatieDeGestiune
                 Console.WriteLine("------------------------C. Citire nume soldat        ------------------------");
                 Console.WriteLine("------------------------K. Citire armament           ------------------------");
                 Console.WriteLine("------------------------L. Cautare soldat            ------------------------");
+                Console.WriteLine("------------------------Z. Cautare arma              ------------------------");
                 Console.WriteLine("------------------------X. Inchidere program         ------------------------");
                 Console.WriteLine("------------------------Alegeti o optiune            ------------------------\n");
                 optiune = Console.ReadLine();
@@ -62,11 +63,19 @@ namespace AplicatieDeGestiune
                         Console.WriteLine(soldat.InformatiiSoldat());
                         break;
                     case "K":
+                        /*Laborator 4. Citire armament*/
+                        Console.WriteLine(AdministrareSoldati.Cautare_in_fisier("Bianca").InformatiiSoldat());
                         Arme.Citire_Armament();
                         break;
                     case "L":
                         /*Laborator 3. Cautare dupa criterii*/
-                        Console.WriteLine(AdministrareSoldati.Cautare_in_fisier("Bianca").InformatiiSoldat());
+                        string SoldatCautat = Console.ReadLine();
+                        Console.WriteLine(AdministrareSoldati.Cautare_in_fisier(SoldatCautat).InformatiiSoldat());
+                        break;
+                    case "Z":
+                        /*Laborator 4. Cautare dupa criterii*/
+                        string ArmamentCautat = Console.ReadLine();
+                        Console.WriteLine(AdministrareArmament.Cautare_in_fisier(ArmamentCautat).InformatiiSoldat());
                         break;
                     case "X":
                         return;
