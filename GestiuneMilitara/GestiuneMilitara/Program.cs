@@ -4,18 +4,58 @@ using System.Configuration;
 using Armament;
 using Soldat;
 using Administrare;
+using System.Linq;
 
-namespace AplicatieDeGestiune
+namespace GestiuneMilitara
 {
     class Program
     {
-        static void Main()
+        static void Main(string[]  args)
         {
 
+            if (args.Length == 0)
+                Console.Write("Linia de comanda nu contine argumente");
+            else
+            {
+
+                // afisarea numarului de argumente
+                Console.WriteLine("Numarul de argumente este: {0}", args.Length);
+                // afisarea argumentelor liniei de comanda
+                foreach (string param in args)
+                    Console.WriteLine(param);
+
+                string[][] tablou_argumente = new string[3][];
+                tablou_argumente[0] = new string[1];
+                tablou_argumente[1] = new string[3];
+                tablou_argumente[3] = new string[4];
+
+                for(int i=0; i<tablou_argumente.Length; i++)
+                {
+                    for(int j=0; j<tablou_argumente[i].Length; j++)
+                    {
+                        tablou_argumente[i][j] = args[0].ToString();
+                    }
+                }
+
+                for (int i = 0; i < tablou_argumente.Length; i++)
+                {
+                    for (int j = 0; j < tablou_argumente[i].Length; j++)
+                    {
+                        Console.WriteLine(tablou_argumente[i][j]);
+                    }
+                    Console.WriteLine("\n");
+                }
+
+
+            }
+
+     
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
             string _numeFisier = ConfigurationManager.AppSettings["_NumeFisier"];
             Administrare_informatii AdministrareSoldati = new Administrare_informatii(numeFisier);
             Administrare_informatii AdministrareArmament = new Administrare_informatii(_numeFisier);
+
+        
             int nrSoldati = 0;
             int nrArmament = 0;
             AdministrareSoldati.GetSoldati(out nrSoldati);
@@ -24,6 +64,7 @@ namespace AplicatieDeGestiune
             Soldati soldat = new Soldati();
             Arme Arme = new Arme();
 
+            
             string optiune;
             do
             {
