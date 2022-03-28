@@ -40,9 +40,13 @@ namespace Soldat
         /* Laborator 3. Ex 1 Citire*/
         public void Citire_Soldat() //laborator 3 - exercitiul 1
         {
+            Console.WriteLine("Introduceti numele:");
             Nume = Console.ReadLine();
+            Console.WriteLine("Introduceti prenumele:");
             Prenume = Console.ReadLine();
+            Console.WriteLine("Introduceti data nasterii:");
             DataNasterii = Console.ReadLine();
+            Console.WriteLine("Introduceti unitatea din care face parte soldatul:");
             Unitate = Console.ReadLine();
         }
 

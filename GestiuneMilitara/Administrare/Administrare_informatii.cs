@@ -38,6 +38,31 @@ namespace Administrare
                 streamWriterFisierText.WriteLine(arma.ConversieLaSir_PentruFisier_armament());
             }
         }
+        /*Laborator 3. Cautare dupa criterii*/
+        public Soldati Cautare_in_fisier(string cautare_string)
+        {
+            //Soldati[] soldati = new Soldati[NR_MAX_SOLDATI];
+            Soldati _soldat = new Soldati();
+            bool semafor = false;
+            // instructiunea 'using' va apela streamReader.Close()
+            using (StreamReader streamReader = new StreamReader(numeFisier))
+            {
+                string linieFisier; 
+                // citeste cate o linie si creaza un obiect de tip Student
+                // pe baza datelor din linia citita
+                while ((linieFisier = streamReader.ReadLine()) != null && semafor==false)
+                {
+                    if(linieFisier.IndexOf(cautare_string)!=-1)
+                    {
+                        _soldat = new Soldati(linieFisier);
+                        semafor = true;
+                    }
+                   
+                }
+            }
+            return _soldat;
+        }
+
 
         public Soldati[] GetSoldati(out int nrSoldati)
         {
@@ -46,9 +71,8 @@ namespace Administrare
             // instructiunea 'using' va apela streamReader.Close()
             using (StreamReader streamReader = new StreamReader(numeFisier))
             {
-                string linieFisier;
+                string linieFisier; //bianca;ioana;
                 nrSoldati = 0;
-
                 // citeste cate o linie si creaza un obiect de tip Student
                 // pe baza datelor din linia citita
                 while ((linieFisier = streamReader.ReadLine()) != null)
@@ -56,9 +80,9 @@ namespace Administrare
                     soldati[nrSoldati++] = new Soldati(linieFisier);
                 }
             }
-
             return soldati;
         }
+
         public Arme[] Get_Armament(out int nrArmemnt)
         {
             Arme[] arme = new Arme[NR_MAX_ARMAMENT];

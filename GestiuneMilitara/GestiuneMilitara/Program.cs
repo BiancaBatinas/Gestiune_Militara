@@ -31,7 +31,7 @@ namespace AplicatieDeGestiune
                 Console.WriteLine("------------------------F. Afisare soldati din fisier------------------------");
                 Console.WriteLine("------------------------S. Inregistrare soldat       ------------------------");
                 Console.WriteLine("------------------------A. Afisare armament          ------------------------");
-                Console.WriteLine("------------------------H. Inregistrare arma         ------------------------");
+                Console.WriteLine("------------------------H. Inregistrare arme         ------------------------");
                 Console.WriteLine("------------------------C. Citire nume soldat        ------------------------");
                 Console.WriteLine("------------------------K. Citire armament           ------------------------");
                 Console.WriteLine("------------------------L. Cautare soldat            ------------------------");
@@ -49,14 +49,15 @@ namespace AplicatieDeGestiune
                         AfisareArmament(arme, nrArmament);
                         break;
                     case "S":
-                        nrSoldati = nrSoldati + 1;
+                        //nrSoldati = nrSoldati + 1;
                         AdministrareSoldati.AddSoldat(soldat);
                         break;
                     case "H":
-                        nrArmament = nrArmament + 1;
+                        //nrArmament = nrArmament + 1;
                         AdministrareArmament.AddArmament(Arme);
                         break;
                     case "C":
+                        /*Laborator 3. Citire date*/
                         soldat.Citire_Soldat();
                         Console.WriteLine(soldat.InformatiiSoldat());
                         break;
@@ -64,6 +65,8 @@ namespace AplicatieDeGestiune
                         Arme.Citire_Armament();
                         break;
                     case "L":
+                        /*Laborator 3. Cautare dupa criterii*/
+                        Console.WriteLine(AdministrareSoldati.Cautare_in_fisier("Bianca").InformatiiSoldat());
                         break;
                     case "X":
                         return;

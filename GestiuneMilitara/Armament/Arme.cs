@@ -43,12 +43,19 @@ namespace Armament
         }
 
         public void Citire_Armament()
-        {
+        {   /* Pentru categoria de arme se poate face o enumeratie din cate sa aleaga dintre cele 8-9 variante. 
+             Se inlocuieste citirea categoriei*/
+            Console.WriteLine("Introduceti categoria:");
             CategorieArmament = Console.ReadLine();
+            Console.WriteLine("Introduceti modelul:");
             Model = Console.ReadLine();
+            Console.WriteLine("Introduceti tipul:");
             Tip = Console.ReadLine();
+            Console.WriteLine("Introduceti calibrul:");
             Calibru = Console.ReadLine();
+            Console.WriteLine("Introduceti detalii:");
             Detalii = Console.ReadLine();
+            Console.WriteLine("Introduceti cantitatea:");
             NumarArmament = Console.Read();
         }
 
