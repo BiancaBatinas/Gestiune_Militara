@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BAC2EF85-C20A-4033-85C1-A26324FC7C4C}</ProjectGuid>
+    <ProjectGuid>{B7ADAA68-A652-47B7-8DE6-11996A025ED2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>GestiuneMilitara</RootNamespace>
     <AssemblyName>GestiuneMilitara</AssemblyName>
@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,6 +49,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Administrare\Administrare.csproj">
+      <Project>{0a743b93-0b59-4326-a568-602ab60023c0}</Project>
+      <Name>Administrare</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Armament\Armament.csproj">
+      <Project>{14944dee-190b-4d53-afb7-bdb2d971013f}</Project>
+      <Name>Armament</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Soldat\Soldat.csproj">
+      <Project>{5d0b807b-4e0a-4e1e-ad88-00cd61866bec}</Project>
+      <Name>Soldat</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

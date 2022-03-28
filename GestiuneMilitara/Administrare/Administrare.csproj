@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{14944DEE-190B-4D53-AFB7-BDB2D971013F}</ProjectGuid>
+    <ProjectGuid>{0A743B93-0B59-4326-A568-602AB60023C0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Armament</RootNamespace>
-    <AssemblyName>Armament</AssemblyName>
+    <RootNamespace>Administrare</RootNamespace>
+    <AssemblyName>Administrare</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,8 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arme.cs" />
+    <Compile Include="Administrare_informatii.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Armament\Armament.csproj">
+      <Project>{14944dee-190b-4d53-afb7-bdb2d971013f}</Project>
+      <Name>Armament</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Soldat\Soldat.csproj">
+      <Project>{5d0b807b-4e0a-4e1e-ad88-00cd61866bec}</Project>
+      <Name>Soldat</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

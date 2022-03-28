@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Configuration;
 using Armament;
 using Soldat;
