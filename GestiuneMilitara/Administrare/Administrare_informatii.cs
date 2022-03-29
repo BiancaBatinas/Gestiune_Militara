@@ -63,6 +63,31 @@ namespace Administrare
             return _soldat;
         }
 
+        /*Laborator 3. Cautare dupa criterii----------------------------------------------------------------------------------------*/
+        public Arme Cautare_in_fisier_arme(string cautare_string)
+        {
+            //Soldati[] soldati = new Soldati[NR_MAX_SOLDATI];
+            Arme _arme = new Arme();
+            bool semafor = false;
+            // instructiunea 'using' va apela streamReader.Close()
+            using (StreamReader streamReader = new StreamReader(numeFisier))
+            {
+                string linieFisier;
+                // citeste cate o linie si creaza un obiect de tip Student
+                // pe baza datelor din linia citita
+                while ((linieFisier = streamReader.ReadLine()) != null && semafor == false)
+                {
+                    if (linieFisier.IndexOf(cautare_string) != -1)  // trebuie adaugata o conditie care sa verifice  daca este un cuvant nu doar o parte din el
+                    {
+                        _arme = new Arme(linieFisier);
+                        semafor = true;
+                    }
+
+                }
+            }
+            return _arme;
+        }
+
 
         public Soldati[] GetSoldati(out int nrSoldati)
         {

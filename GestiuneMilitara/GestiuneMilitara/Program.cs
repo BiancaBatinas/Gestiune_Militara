@@ -78,8 +78,8 @@ namespace GestiuneMilitara
             {
                 Console.WriteLine("\n");
                 Console.WriteLine("------------------------F. Afisare soldati din fisier------------------------");
-                Console.WriteLine("------------------------S. Inregistrare soldat       ------------------------");
                 Console.WriteLine("------------------------A. Afisare armament          ------------------------");
+                Console.WriteLine("------------------------S. Inregistrare soldat       ------------------------");
                 Console.WriteLine("------------------------H. Inregistrare arme         ------------------------");
                 Console.WriteLine("------------------------C. Citire nume soldat        ------------------------");
                 Console.WriteLine("------------------------K. Citire armament           ------------------------");
@@ -113,7 +113,6 @@ namespace GestiuneMilitara
                         break;
                     case "K":
                         /*Laborator 4. Citire armament*/
-                        Console.WriteLine(AdministrareSoldati.Cautare_in_fisier("Bianca").InformatiiSoldat());
                         Arme.Citire_Armament();
                         break;
                     case "L":
@@ -124,7 +123,7 @@ namespace GestiuneMilitara
                     case "Z":
                         /*Laborator 4. Cautare dupa criterii*/
                         string ArmamentCautat = Console.ReadLine();
-                        Console.WriteLine(AdministrareArmament.Cautare_in_fisier(ArmamentCautat).InformatiiSoldat());
+                        Console.WriteLine(AdministrareArmament.Cautare_in_fisier_arme(ArmamentCautat).InformatiiArmament());
                         break;
                     case "X":
                         return;
