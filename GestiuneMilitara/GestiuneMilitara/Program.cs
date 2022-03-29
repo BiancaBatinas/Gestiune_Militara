@@ -159,11 +159,11 @@ namespace GestiuneMilitara
             {
                 string infoArme = string.Format("Categorie: {0} \n Model: {1} \n Tip: {2} \n Calibru: {3} \n Detalii arma: {4} \n Cantitate: {5}",
                    (arme[contor].Categorie ?? " NECUNOSCUT "),
-                   (arme[contor].GetModel() ?? " NECUNOSCUT "),
-                   (arme[contor].GetTip() ?? " NECUNOSCUT "),
-                   (arme[contor].GetCalibru() ?? " NECUNOSCUT "),
-                   (arme[contor].GetDetalii() ?? " NECUNOSCUT "),
-                   arme[contor].GetNumarArmament());
+                   (arme[contor].Model_arma ?? " NECUNOSCUT "),
+                   (arme[contor].TipArma ?? " NECUNOSCUT "),
+                   (arme[contor].CalibruArma ?? " NECUNOSCUT "),
+                   (arme[contor].DetaliiArma ?? " NECUNOSCUT "),
+                   arme[contor].NumarArme);
 
                 Console.WriteLine(infoArme);
             }

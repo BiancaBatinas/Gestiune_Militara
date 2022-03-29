@@ -59,7 +59,8 @@ namespace Armament
             NumarArmament = Console.Read();
         }
 
-        /*------------Inceput metode GET  -----------------*/
+        /*------------Inceput metode GET/SET  -----------------*/
+        /*Laborator 5 -Implementari automate*/
         public string Categorie
         {
             get { return CategorieArmament; }
@@ -67,66 +68,40 @@ namespace Armament
             
         }
 
-        public string GetModel()
+        public string Model_arma
         {
-            return Model;
+            get { return Model; }
+            set { Model = value; }
         }
 
-        public string GetTip()
+        public string TipArma
         {
-            return Tip;
+            get { return Tip; }
+            set { Tip = value; }
         }
 
-        public string GetCalibru()
+        public string CalibruArma
         {
-            return Calibru;
+            get { return Calibru; }
+            set { Calibru = value; }
         }
 
-        public string GetDetalii()
+        public string DetaliiArma
         {
-            return Detalii;
+            get { return Detalii; }
+            set { Detalii = value; }
         }
 
-        public int GetNumarArmament()
+        public int NumarArme
         {
-            return NumarArmament;
+            get { return NumarArmament; }
+            set { NumarArmament = value; }
         }
-        /*------------Sfarsit metode GET  -----------------*/
+        /*------------Sfarsit metode GET/SET  -----------------*/
 
-        /*------------Inceput metode SET-----------------*/
-        public void SetCategorie(string _Categorie)
-        {
-            CategorieArmament = _Categorie;
-        }
-
-        public void SetModel(string _Model)
-        {
-            Model = _Model;
-        }
-
-        public void SetTip(string _Tip)
-        {
-            Tip = _Tip;
-        }
-
-        public void SetCalibru(string _Calibru)
-        {
-            Calibru = _Calibru;
-        }
-
-        public void SetDetalii(string _Detalii)
-        {
-            Detalii = _Detalii;
-        }
-
-        public void SetNumarArmament(int _NumarArmament)
-        {
-            NumarArmament = _NumarArmament;
-        }
-        /*------------Sfarsit metode SET-----------------*/
         public string InformatiiArmament()
         {
-            return $" Categorie: {Categorie} \n Model: {GetModel()} \n Tip: {GetTip()} \n Calibru: {GetCalibru()} \n Detalii armament: {GetDetalii()} \n Cantitate: {GetNumarArmament()}";
+            return $" Categorie: {Categorie} \n Model: {Model_arma} \n Tip: {TipArma} \n Calibru: {CalibruArma} \n Detalii armament: {DetaliiArma} \n Cantitate: {NumarArme}";
         }
 
         public Arme(string linieFisier)
