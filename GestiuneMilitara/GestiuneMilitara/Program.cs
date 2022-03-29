@@ -13,16 +13,12 @@ namespace GestiuneMilitara
         static void Main(string[]  args)
         {
 
-           /* if (args.Length == 0)
+            if (args.Length == 0)
                 Console.Write("Linia de comanda nu contine argumente");
             else
             {
 
-                // afisarea numarului de argumente
-                Console.WriteLine("Numarul de argumente este: {0}", args.Length);
-                // afisarea argumentelor liniei de comanda
-                foreach (string param in args)
-                    Console.WriteLine(param);
+               
 
                 //functia group by ne grupeaza itemi sirului dupa un anumit criteriu, in momentul de fata ne grupeaza dupa  litera                            name.first() care este primul caracter din string
                 //deci grupam argumentele dupa prima litera, dupa care functia count numara cate grupari din acestea sunt,                              pentru a stii cate linii vom avea nevoie
@@ -55,7 +51,7 @@ namespace GestiuneMilitara
                     Console.WriteLine();
                 }
 
-            }*/
+            }
 
      
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
