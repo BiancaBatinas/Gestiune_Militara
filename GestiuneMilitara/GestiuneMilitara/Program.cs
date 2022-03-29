@@ -13,7 +13,7 @@ namespace GestiuneMilitara
         static void Main(string[]  args)
         {
 
-            if (args.Length == 0)
+           /* if (args.Length == 0)
                 Console.Write("Linia de comanda nu contine argumente");
             else
             {
@@ -24,30 +24,38 @@ namespace GestiuneMilitara
                 foreach (string param in args)
                     Console.WriteLine(param);
 
-                string[][] tablou_argumente = new string[3][];
-                tablou_argumente[0] = new string[1];
-                tablou_argumente[1] = new string[3];
-                tablou_argumente[3] = new string[4];
-
-                for(int i=0; i<tablou_argumente.Length; i++)
+                //functia group by ne grupeaza itemi sirului dupa un anumit criteriu, in momentul de fata ne grupeaza dupa  litera                            name.first() care este primul caracter din string
+                //deci grupam argumentele dupa prima litera, dupa care functia count numara cate grupari din acestea sunt,                              pentru a stii cate linii vom avea nevoie
+                //(de ex daca avem albert bianca beniamin calin sebi vom avea 4 linii pe care trebuie sa ii punem pe cei cu a,                          cu b,c si d) 
+                string[][] tabela_in_scara = new string[args.GroupBy(name => name.First()).Count()][];
+                int i = 0;
+                //Primul foreach contine tot functia group by urmata de order by, dupa care to List(aceste functii se realizeaza                        de la stanga la dreapta), in traducere libera
+                //grupam argumentele dupa prima litera, dupa care ii si ordonam. si in final ii transformam in lista care va fi                         parcursa element cu element de catre foreach
+                foreach (var argumente in args.GroupBy(name => name.First()).OrderBy(g => g.Key).ToList())
                 {
-                    for(int j=0; j<tablou_argumente[i].Length; j++)
+                    //argumente se comporta cumva ca o lista in care avem cheia primara(prima litera) si elementele care incep                          cu litera aceea
+                    int j = 0;
+                    //aici am facut un lucru asemanator ca si la declararea tabela_in_scara, am setat dinainte ce marime va avea                        linia din tabloul nostru in scari
+                    tabela_in_scara[i] = new string[argumente.Count()];
+                    //acum ca trecem prin fiecare lista de argumente care incep cu o litera, putem trece prin fiecare element                           din lista cu acest foreach (care ne face si
+                    //o sortare dupa nume) care ne aduce intr-o lista "parcusibila" toate elementele care au aceeasi prima                              litera.
+                    foreach (var argument in argumente.OrderBy(name => name).ToList())
                     {
-                        tablou_argumente[i][j] = args[0].ToString();
+                        tabela_in_scara[i][j] = argument;
+                        j++;
                     }
+                    i++;
+                }
+                foreach (var linie in tabela_in_scara)
+                {
+                    foreach (var item in linie)
+                    {
+                        Console.WriteLine(item + " ");
+                    }
+                    Console.WriteLine();
                 }
 
-                for (int i = 0; i < tablou_argumente.Length; i++)
-                {
-                    for (int j = 0; j < tablou_argumente[i].Length; j++)
-                    {
-                        Console.WriteLine(tablou_argumente[i][j]);
-                    }
-                    Console.WriteLine("\n");
-                }
-
-
-            }
+            }*/
 
      
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
