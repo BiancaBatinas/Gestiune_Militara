@@ -158,7 +158,7 @@ namespace GestiuneMilitara
             for (int contor = 0; contor < nrArme; contor++)
             {
                 string infoArme = string.Format("Categorie: {0} \n Model: {1} \n Tip: {2} \n Calibru: {3} \n Detalii arma: {4} \n Cantitate: {5}",
-                   (arme[contor].GetCategorie() ?? " NECUNOSCUT "),
+                   (arme[contor].Categorie ?? " NECUNOSCUT "),
                    (arme[contor].GetModel() ?? " NECUNOSCUT "),
                    (arme[contor].GetTip() ?? " NECUNOSCUT "),
                    (arme[contor].GetCalibru() ?? " NECUNOSCUT "),

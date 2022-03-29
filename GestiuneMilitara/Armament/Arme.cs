@@ -60,9 +60,11 @@ namespace Armament
         }
 
         /*------------Inceput metode GET  -----------------*/
-        public string GetCategorie()
+        public string Categorie
         {
-            return CategorieArmament;
+            get { return CategorieArmament; }
+            set { CategorieArmament = value; }
+            
         }
 
         public string GetModel()
@@ -124,7 +126,7 @@ namespace Armament
         /*------------Sfarsit metode SET-----------------*/
         public string InformatiiArmament()
         {
-            return $" Categorie: {GetCategorie()} \n Model: {GetModel()} \n Tip: {GetTip()} \n Calibru: {GetCalibru()} \n Detalii armament: {GetDetalii()} \n Cantitate: {GetNumarArmament()}";
+            return $" Categorie: {Categorie} \n Model: {GetModel()} \n Tip: {GetTip()} \n Calibru: {GetCalibru()} \n Detalii armament: {GetDetalii()} \n Cantitate: {GetNumarArmament()}";
         }
 
         public Arme(string linieFisier)
