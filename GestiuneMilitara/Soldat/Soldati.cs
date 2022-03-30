@@ -54,6 +54,7 @@ namespace Soldat
         public string GetNumeSoldat()
         {
             return Nume;
+
         }
 
         public string GetPrenumeSoldat()
