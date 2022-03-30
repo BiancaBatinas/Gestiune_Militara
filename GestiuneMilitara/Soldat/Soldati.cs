@@ -50,54 +50,35 @@ namespace Soldat
             Unitate = Console.ReadLine();
         }
 
-        /*------------Inceput metode GET  -----------------*/
-        public string GetNumeSoldat()
+        /*------------Inceput metode GET/SET  -----------------*/
+        public string NumeSoldat
         {
-            return Nume;
+            get { return Nume; }
+            set { Nume = value; }
 
         }
 
-        public string GetPrenumeSoldat()
+        public string PrenumeSoldat
         {
-            return Prenume;
+            get { return Prenume;  }
+            set { Prenume = value; }
         }
 
-        public string GetDataNasterii()
+        public string DataNasteriiSoldati
         {
-            return DataNasterii;
+            get { return DataNasterii; }
+            set { DataNasterii = value; }
         }
 
-        public string GetUnitate()
+        public string UnitateSoldati
         {
-            return Unitate;
+            get { return Unitate; }
+            set { Unitate = value; }
         }
-        /*------------Sfarsit metode GET  -----------------*/
-
-        /*------------Inceput metode SET-----------------*/
-        public void SetNume(string _Nume)
-        {
-            Nume = _Nume;
-        }
-
-        public void SetPrenume(string _Prenume)
-        {
-            Prenume = _Prenume;
-        }
-
-        public void SetDataNasterii(string _DataNasterii)
-        {
-            DataNasterii = _DataNasterii;
-        }
-
-        public void SetUnitate(string _Unitate)
-        {
-            Unitate = _Unitate;
-        }
-        /*------------Sfarsit metode SET-----------------*/
-
+        /*------------Sfarsit metode GET/SET  -----------------*/
         public string InformatiiSoldat()
         {
-            return $" Nume soldat: {GetNumeSoldat()} \n Prenume: {GetPrenumeSoldat()} \n Data nasterii: {GetDataNasterii()} \n Unitate: {GetUnitate()}";
+            return $" Nume soldat: {NumeSoldat} \n Prenume: {PrenumeSoldat} \n Data nasterii: {DataNasteriiSoldati} \n Unitate: {UnitateSoldati}";
         }
 
         public Soldati(string linieFisier)

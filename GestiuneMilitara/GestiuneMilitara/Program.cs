@@ -139,10 +139,10 @@ namespace GestiuneMilitara
             for (int contor = 0; contor < nrSoldati; contor++)
             {
                 string infoStudent = string.Format("Soldatul cu numele {0} {1} este nascut la data de  {2} si se afla la unitatea {3}",
-                   (soldati[contor].GetNumeSoldat() ?? " NECUNOSCUT "),
-                   (soldati[contor].GetPrenumeSoldat() ?? " NECUNOSCUT "),
-                   (soldati[contor].GetDataNasterii() ?? " NECUNOSCUT "),
-                   (soldati[contor].GetUnitate() ?? " NECUNOSCUT "));
+                   (soldati[contor].NumeSoldat ?? " NECUNOSCUT "),
+                   (soldati[contor].PrenumeSoldat ?? " NECUNOSCUT "),
+                   (soldati[contor].DataNasteriiSoldati ?? " NECUNOSCUT "),
+                   (soldati[contor].UnitateSoldati ?? " NECUNOSCUT "));
 
                 Console.WriteLine(infoStudent);
             }
