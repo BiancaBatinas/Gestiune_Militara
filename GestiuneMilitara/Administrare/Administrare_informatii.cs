@@ -105,6 +105,7 @@ namespace Administrare
                     soldati[nrSoldati++] = new Soldati(linieFisier);
                 }
             }
+            Array.Resize(ref soldati, nrSoldati);
             return soldati;
         }
 
@@ -125,7 +126,7 @@ namespace Administrare
                     arme[nrArmemnt++] = new Arme(linieFisier);
                 }
             }
-
+            Array.Resize(ref arme, nrArmemnt);
             return arme;
         }
     }

@@ -12,13 +12,22 @@ namespace Armament
         private const int CALIBRU = 3;
         private const int DETALII = 4;
         private const int NRARMAMENT = 5;
+        public enum Categorie_armament
+        {
+            Artilerie=1,
+            Antitanc=2,
+            Antiaerian=3,
+            Infanterie=4,
+            Genistic=5
+        }
 
-        string CategorieArmament; //Armament de infanterie
-        string Model; //ZU-2
-        string Tip;//Mitralieră antiaeriană
-        string Calibru;//2×14,5mm
-        string Detalii;//Versiune de producție românească.
-        int NumarArmament;//1000
+        public string CategorieArmament { get; set; } //Armament de infanterie
+        public string Model { get; set; }
+        public string Tip { get; set; }
+        public string Calibru { get; set; }
+        public string Detalii { get; set; }
+        public int NumarArmament { get; set; }
+
         /*------------Sfarsit date membre-----------------*/
 
         /*------------Inceput memode-----------------*/
@@ -60,48 +69,11 @@ namespace Armament
         }
 
         /*------------Inceput metode GET/SET  -----------------*/
-        /*Laborator 5 -Implementari automate*/
-        public string Categorie
-        {
-            get { return CategorieArmament; }
-            set { CategorieArmament = value; }
-            
-        }
-
-        public string Model_arma
-        {
-            get { return Model; }
-            set { Model = value; }
-        }
-
-        public string TipArma
-        {
-            get { return Tip; }
-            set { Tip = value; }
-        }
-
-        public string CalibruArma
-        {
-            get { return Calibru; }
-            set { Calibru = value; }
-        }
-
-        public string DetaliiArma
-        {
-            get { return Detalii; }
-            set { Detalii = value; }
-        }
-
-        public int NumarArme
-        {
-            get { return NumarArmament; }
-            set { NumarArmament = value; }
-        }
-        /*------------Sfarsit metode GET/SET  -----------------*/
+       
 
         public string InformatiiArmament()
         {
-            return $" Categorie: {Categorie} \n Model: {Model_arma} \n Tip: {TipArma} \n Calibru: {CalibruArma} \n Detalii armament: {DetaliiArma} \n Cantitate: {NumarArme}";
+            return $" Categorie: {CategorieArmament} \n Model: {Model} \n Tip: {Tip} \n Calibru: {Calibru} \n Detalii armament: {Detalii} \n Cantitate: {NumarArmament}";
         }
 
         public Arme(string linieFisier)

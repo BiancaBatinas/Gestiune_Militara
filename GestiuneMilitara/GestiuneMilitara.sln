@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Administrare", "Administrar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soldat", "Soldat\Soldat.csproj", "{5D0B807B-4E0A-4E1E-AD88-00CD61866BEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Design-template", "Design-template\Design-template.csproj", "{A910AFE4-3655-48D5-97CB-1DB2878F1D23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5D0B807B-4E0A-4E1E-AD88-00CD61866BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D0B807B-4E0A-4E1E-AD88-00CD61866BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D0B807B-4E0A-4E1E-AD88-00CD61866BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A910AFE4-3655-48D5-97CB-1DB2878F1D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A910AFE4-3655-48D5-97CB-1DB2878F1D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A910AFE4-3655-48D5-97CB-1DB2878F1D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A910AFE4-3655-48D5-97CB-1DB2878F1D23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

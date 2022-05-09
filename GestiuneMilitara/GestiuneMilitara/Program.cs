@@ -1,16 +1,17 @@
 ﻿
-using System;
-using System.Configuration;
+using Administrare;
 using Armament;
 using Soldat;
-using Administrare;
+using System;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 
 namespace GestiuneMilitara
 {
     class Program
     {
-        static void Main(string[]  args)
+        static void Main(string[] args)
         {
 
             if (args.Length == 0)
@@ -18,7 +19,7 @@ namespace GestiuneMilitara
             else
             {
 
-               
+
 
                 //functia group by ne grupeaza itemi sirului dupa un anumit criteriu, in momentul de fata ne grupeaza dupa  litera                            name.first() care este primul caracter din string
                 //deci grupam argumentele dupa prima litera, dupa care functia count numara cate grupari din acestea sunt,                              pentru a stii cate linii vom avea nevoie
@@ -53,22 +54,28 @@ namespace GestiuneMilitara
 
             }
 
-     
+
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
             string _numeFisier = ConfigurationManager.AppSettings["_NumeFisier"];
-            Administrare_informatii AdministrareSoldati = new Administrare_informatii(numeFisier);
-            Administrare_informatii AdministrareArmament = new Administrare_informatii(_numeFisier);
+           // Administrare_informatii AdministrareSoldati = new Administrare_informatii(numeFisier);
+           // Administrare_informatii AdministrareArmament = new Administrare_informatii(_numeFisier);
 
-        
+            string locatieFisierSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string caleCompletaFisier = locatieFisierSolutie + "\\" + numeFisier;
+            Administrare_informatii adminSoldati = new Administrare_informatii(caleCompletaFisier);
+            string locatieFisierSolutie1 = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string caleCompletaFisier_arme = locatieFisierSolutie1 + "\\" + _numeFisier;
+            Administrare_informatii adminArme = new Administrare_informatii(caleCompletaFisier_arme);
+
             int nrSoldati = 0;
             int nrArmament = 0;
-            AdministrareSoldati.GetSoldati(out nrSoldati);
-            AdministrareArmament.Get_Armament(out nrArmament);
+            adminSoldati.GetSoldati(out nrSoldati);
+            // AdministrareArmament.Get_Armament(out nrArmament);
 
             Soldati soldat = new Soldati();
             Arme Arme = new Arme();
 
-            
+
             string optiune;
             do
             {
@@ -87,20 +94,20 @@ namespace GestiuneMilitara
                 switch (optiune.ToUpper())
                 {
                     case "F":
-                        Soldati[] soldati = AdministrareSoldati.GetSoldati(out nrSoldati);
+                        Soldati[] soldati = adminSoldati.GetSoldati(out nrSoldati);
                         AfisareSoldati(soldati, nrSoldati);
                         break;
                     case "A":
-                        Arme[] arme = AdministrareArmament.Get_Armament(out nrArmament);
+                        Arme[] arme = adminArme.Get_Armament(out nrArmament);
                         AfisareArmament(arme, nrArmament);
                         break;
                     case "S":
                         //nrSoldati = nrSoldati + 1;
-                        AdministrareSoldati.AddSoldat(soldat);
+                        adminSoldati.AddSoldat(soldat);
                         break;
                     case "H":
-                        //nrArmament = nrArmament + 1;
-                        AdministrareArmament.AddArmament(Arme);
+                        nrArmament = nrArmament + 1;
+                        adminArme.AddArmament(Arme);
                         break;
                     case "C":
                         /*Laborator 3. Citire date*/
@@ -114,12 +121,12 @@ namespace GestiuneMilitara
                     case "L":
                         /*Laborator 3. Cautare dupa criterii*/
                         string SoldatCautat = Console.ReadLine();
-                        Console.WriteLine(AdministrareSoldati.Cautare_in_fisier(SoldatCautat).InformatiiSoldat());
+                        Console.WriteLine(adminSoldati.Cautare_in_fisier(SoldatCautat).InformatiiSoldat());
                         break;
                     case "Z":
                         /*Laborator 4. Cautare dupa criterii*/
                         string ArmamentCautat = Console.ReadLine();
-                        Console.WriteLine(AdministrareArmament.Cautare_in_fisier_arme(ArmamentCautat).InformatiiArmament());
+                        Console.WriteLine(adminSoldati.Cautare_in_fisier_arme(ArmamentCautat).InformatiiArmament());
                         break;
                     case "X":
                         return;
@@ -138,13 +145,15 @@ namespace GestiuneMilitara
             Console.WriteLine("Soldatii sunt:");
             for (int contor = 0; contor < nrSoldati; contor++)
             {
-                string infoStudent = string.Format("Soldatul cu numele {0} {1} este nascut la data de  {2} si se afla la unitatea {3}",
-                   (soldati[contor].NumeSoldat ?? " NECUNOSCUT "),
-                   (soldati[contor].PrenumeSoldat ?? " NECUNOSCUT "),
-                   (soldati[contor].DataNasteriiSoldati ?? " NECUNOSCUT "),
-                   (soldati[contor].UnitateSoldati ?? " NECUNOSCUT "));
+                string infoSoldat = string.Format("Soldatul cu numele {0} {1} este nascut la data de  {2} cu CNP-ul {3} si se afla la unitatea {4}",
+                   (soldati[contor].Nume ?? " NECUNOSCUT "),
+                   (soldati[contor].Prenume ?? " NECUNOSCUT "),
+                   (soldati[contor].CNP ?? " NECUNOSCUT "),
+                  
+                   (soldati[contor].DataNasterii ?? " NECUNOSCUT "),
+                   (soldati[contor].Unitate ?? " NECUNOSCUT "));
 
-                Console.WriteLine(infoStudent);
+                Console.WriteLine(infoSoldat);
             }
         }
 
@@ -154,12 +163,12 @@ namespace GestiuneMilitara
             for (int contor = 0; contor < nrArme; contor++)
             {
                 string infoArme = string.Format("Categorie: {0} \n Model: {1} \n Tip: {2} \n Calibru: {3} \n Detalii arma: {4} \n Cantitate: {5}",
-                   (arme[contor].Categorie ?? " NECUNOSCUT "),
-                   (arme[contor].Model_arma ?? " NECUNOSCUT "),
-                   (arme[contor].TipArma ?? " NECUNOSCUT "),
-                   (arme[contor].CalibruArma ?? " NECUNOSCUT "),
-                   (arme[contor].DetaliiArma ?? " NECUNOSCUT "),
-                   arme[contor].NumarArme);
+                   (arme[contor].CategorieArmament ?? " NECUNOSCUT "),
+                   (arme[contor].Model ?? " NECUNOSCUT "),
+                   (arme[contor].Tip ?? " NECUNOSCUT "),
+                   (arme[contor].Calibru ?? " NECUNOSCUT "),
+                   (arme[contor].Detalii ?? " NECUNOSCUT "),
+                   arme[contor].NumarArmament);
 
                 Console.WriteLine(infoArme);
             }

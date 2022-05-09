@@ -12,13 +12,21 @@ namespace Soldat
         private const char SEPARATOR_PRINCIPAL_FISIER = ';';
         private const int NUME = 0;
         private const int PRENUME = 1;
-        private const int DATA = 2;
-        private const int UNITATE = 3;
+        private const int Cnp = 2;
+        private const int DATA = 3;
+        private const int UNITATE = 4;
+        public enum Sex
+        {
+            F=6,
+            M=5
+        }
+       public string Nume { get; set; }
+        public string CNP { get; set; }
+        public string Prenume { get; set; }
+       public string DataNasterii { get; set; }
+       public string Unitate { get; set; }
 
-        string Nume;
-        string Prenume;
-        string DataNasterii;
-        string Unitate;
+
         /*-----------Sfarsit date membre  -----------------*/
 
         /*------------Inceput memode-----------------*/
@@ -26,14 +34,16 @@ namespace Soldat
         {
             Nume = string.Empty;
             Prenume = string.Empty;
+            CNP = string.Empty;
             DataNasterii = string.Empty;
             Unitate = string.Empty;
         }
 
-        public Soldati(string _Nume, string _Prenume, string _DataNasterii, string _Unitate)
+        public Soldati(string _Nume, string _Prenume, string _CNP, string _DataNasterii, string _Unitate)
         {
             Nume = _Nume;
             Prenume = _Prenume;
+            CNP = _CNP;
             DataNasterii = _DataNasterii;
             Unitate = _Unitate;
         }
@@ -44,41 +54,26 @@ namespace Soldat
             Nume = Console.ReadLine();
             Console.WriteLine("Introduceti prenumele:");
             Prenume = Console.ReadLine();
+            Console.WriteLine("Introduceti CNP-ul:");
+            CNP = Console.ReadLine();
             Console.WriteLine("Introduceti data nasterii:");
             DataNasterii = Console.ReadLine();
             Console.WriteLine("Introduceti unitatea din care face parte soldatul:");
             Unitate = Console.ReadLine();
         }
 
-        /*------------Inceput metode GET/SET  -----------------*/
-        public string NumeSoldat
-        {
-            get { return Nume; }
-            set { Nume = value; }
-
-        }
-
-        public string PrenumeSoldat
-        {
-            get { return Prenume;  }
-            set { Prenume = value; }
-        }
-
-        public string DataNasteriiSoldati
-        {
-            get { return DataNasterii; }
-            set { DataNasterii = value; }
-        }
-
-        public string UnitateSoldati
-        {
-            get { return Unitate; }
-            set { Unitate = value; }
-        }
-        /*------------Sfarsit metode GET/SET  -----------------*/
+        
+       
         public string InformatiiSoldat()
         {
-            return $" Nume soldat: {NumeSoldat} \n Prenume: {PrenumeSoldat} \n Data nasterii: {DataNasteriiSoldati} \n Unitate: {UnitateSoldati}";
+            return $" Nume soldat: {Nume} \n Prenume: {Prenume} \n CNP:{CNP} \n Data nasterii: {DataNasterii} \n Unitate: {Unitate}";
+        }
+
+        public string Gen()
+        {
+            var f = Convert.ToInt32(CNP[1]);
+            return ((Sex)f).ToString();
+
         }
 
         public Soldati(string linieFisier)
@@ -86,14 +81,15 @@ namespace Soldat
             var dateFisier = linieFisier.Split(SEPARATOR_PRINCIPAL_FISIER);
             Nume = dateFisier[NUME];
             Prenume = dateFisier[PRENUME];
+            CNP = dateFisier[Cnp];
             DataNasterii = dateFisier[DATA];
             Unitate = dateFisier[UNITATE];
         }
 
         public string ConversieLaSir_PentruFisier()
         {
-            string obiectStudentPentruFisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}",
-                SEPARATOR_PRINCIPAL_FISIER, (Nume ?? " NECUNOSCUT "), (Prenume ?? " NECUNOSCUT "), (DataNasterii ?? " NECUNOSCUT "), (Unitate ?? " NECUNOSCUT "));
+            string obiectStudentPentruFisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}",
+                SEPARATOR_PRINCIPAL_FISIER, (Nume ?? " NECUNOSCUT "), (Prenume ?? " NECUNOSCUT "),(CNP ?? "NECUNOSCUT"), (DataNasterii ?? " NECUNOSCUT "), (Unitate ?? " NECUNOSCUT "));
 
             return obiectStudentPentruFisier;
         }
