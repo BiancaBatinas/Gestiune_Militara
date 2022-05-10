@@ -56,12 +56,12 @@ namespace Design_template.Forms
             if (textBox1.Text.Length != 0 && textBox2.Text.Length != 0 && textBox3.Text.Length != 0 && textBox4.Text.Length != 0 && textBox5.Text.Length != 0)
             {
 
-                if (textBox1.Text.Any(c => char.IsDigit(c)))
+                if (textBox1.Text.Any(c => char.IsDigit(c)) || textBox1.TextLength>15)
                 {
                     textBox1.BackColor = Color.FromArgb(250, 220, 217);
                     ok = 0;
                 }
-                if (textBox2.Text.Any(c => char.IsDigit(c)))
+                if (textBox2.Text.Any(c => char.IsDigit(c)) || textBox2.TextLength > 15)
                 {
                     textBox2.BackColor = Color.FromArgb(250, 220, 217);
                     ok = 0;
@@ -72,17 +72,13 @@ namespace Design_template.Forms
                     ok = 0;
                 }
 
-                if (!int.TryParse(textBox4.Text, out _))
+                if (!long.TryParse(textBox4.Text, out _) || textBox4.TextLength > 13)
                 {
                     textBox4.BackColor = Color.FromArgb(250, 220, 217);
                     ok = 0;
                 }
 
-                if (textBox5.Text.Any(c => char.IsDigit(c)))
-                {
-                    textBox5.BackColor = Color.FromArgb(250, 220, 217);
-                    ok = 0;
-                }
+               
 
 
                 if (ok == 1)
