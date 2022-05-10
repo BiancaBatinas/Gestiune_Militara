@@ -184,6 +184,21 @@ namespace Design_template.Forms
 
         private void InregistrareArme_Load(object sender, EventArgs e)
         {
+            LoadTheme();
+        }
+
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = CuloriTema.PrimaryColor;
+                    btn.ForeColor = Color.Black;
+                    btn.FlatAppearance.BorderColor = CuloriTema.SecondaryColor;
+                }
+            }
 
         }
 

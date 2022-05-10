@@ -160,7 +160,7 @@ namespace Design_template.Forms
 
         private void InregistrareSoldati_Load(object sender, EventArgs e)
         {
-
+            LoadTheme();
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -169,6 +169,21 @@ namespace Design_template.Forms
                 textBox5.BackColor = Color.White;
             else
                 textBox5.BackColor = Color.AliceBlue;
+        }
+       
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = CuloriTema.PrimaryColor;
+                    btn.ForeColor = Color.Black;
+                    btn.FlatAppearance.BorderColor = CuloriTema.SecondaryColor;
+                }
+            }
+            
         }
     }
 }
