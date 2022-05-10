@@ -182,6 +182,7 @@ namespace Design_template.Forms
             this.Controls.Add(this.textBox1);
             this.Name = "InregistrareArme";
             this.Text = "InregistrareArme";
+            this.Load += new System.EventHandler(this.InregistrareArme_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

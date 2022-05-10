@@ -47,7 +47,7 @@ namespace Design_template.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            int ok = 1;
             if (compara == false)
             {
                 button1.Width = 2 * button1.Width;
@@ -55,19 +55,78 @@ namespace Design_template.Forms
             }
             if (textBox1.Text.Length != 0 && textBox2.Text.Length != 0 && textBox3.Text.Length != 0 && textBox4.Text.Length != 0 && textBox5.Text.Length != 0)
             {
-                button1.Text = "S-a trimis.";
-                button1.BackColor = Color.White;
-                nrSoldati = nrSoldati + 1;
-                soldat = new Soldati(textBox1.Text, textBox2.Text, textBox3.Text, textBox5.Text, textBox4.Text);
-                adminMilitari.AddSoldat(soldat);
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
 
+                if (textBox1.Text.Any(c => char.IsDigit(c)))
+                {
+                    textBox1.BackColor = Color.FromArgb(250, 220, 217);
+                    ok = 0;
+                }
+                if (textBox2.Text.Any(c => char.IsDigit(c)))
+                {
+                    textBox2.BackColor = Color.FromArgb(250, 220, 217);
+                    ok = 0;
+                }
+                if (!int.TryParse(textBox3.Text, out _))
+                {
+                    textBox3.BackColor = Color.FromArgb(250, 220, 217);
+                    ok = 0;
+                }
+
+                if (!int.TryParse(textBox4.Text, out _))
+                {
+                    textBox4.BackColor = Color.FromArgb(250, 220, 217);
+                    ok = 0;
+                }
+
+                if (textBox5.Text.Any(c => char.IsDigit(c)))
+                {
+                    textBox5.BackColor = Color.FromArgb(250, 220, 217);
+                    ok = 0;
+                }
+
+
+                if (ok == 1)
+                {
+
+                    button1.Text = "S-a trimis.";
+                    button1.BackColor = Color.White;
+                    nrSoldati = nrSoldati + 1;
+                    soldat = new Soldati(textBox1.Text, textBox2.Text, textBox3.Text, textBox5.Text, textBox4.Text);
+                    adminMilitari.AddSoldat(soldat);
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    textBox5.Text = "";
+                }
+                if (ok == 0)
+                {
+                    button1.Text = "Datele nu sunt valide!";
+                    button1.BackColor = Color.FromArgb(250, 220, 217);
+                }
 
             }
+            else
+            {
+                button1.Text = "Completati toate datele!";
+                button1.BackColor = Color.FromArgb(250, 220, 217);
+                if (textBox1.Text.Length == 0)
+                    textBox1.BackColor = Color.FromArgb(250, 220, 217);
+
+                if (textBox2.Text.Length == 0)
+                    textBox2.BackColor = Color.FromArgb(250, 220, 217);
+
+                if (textBox3.Text.Length == 0)
+                    textBox3.BackColor = Color.FromArgb(250, 220, 217);
+                if (textBox4.Text.Length == 0)
+                    textBox4.BackColor = Color.FromArgb(250, 220, 217);
+                if (textBox5.Text.Length == 0)
+                    textBox5.BackColor = Color.FromArgb(250, 220, 217);
+
+      
+
+            }
+
             button1.Left = (this.ClientSize.Width - button1.Width) / 2;
         }
 
@@ -101,6 +160,11 @@ namespace Design_template.Forms
                 textBox4.BackColor = Color.White;
             else
                 textBox4.BackColor = Color.AliceBlue;
+        }
+
+        private void InregistrareSoldati_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)

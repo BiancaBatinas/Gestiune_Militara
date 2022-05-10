@@ -160,6 +160,7 @@ namespace Design_template.Forms
             this.Controls.Add(this.textBox1);
             this.Name = "InregistrareSoldati";
             this.Text = "InregistrareSoldati";
+            this.Load += new System.EventHandler(this.InregistrareSoldati_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

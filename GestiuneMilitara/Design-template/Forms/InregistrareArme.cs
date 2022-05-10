@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Text.RegularExpressions;
 
 namespace Design_template.Forms
 {
@@ -27,6 +28,7 @@ namespace Design_template.Forms
         int nrArmament = 0;
         Soldati soldat = new Soldati();
         Arme Arme = new Arme();
+        
         public InregistrareArme()
         {
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
@@ -46,7 +48,7 @@ namespace Design_template.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            int ok = 1;
             if (compara == false)
             {
                 button1.Width = 2 * button1.Width;
@@ -54,20 +56,88 @@ namespace Design_template.Forms
             }
             if (textBox1.Text.Length != 0 && textBox2.Text.Length != 0 && textBox3.Text.Length != 0 && textBox4.Text.Length != 0 && textBox5.Text.Length != 0 && textBox6.Text.Length != 0)
             {
-                button1.Text = "S-a trimis.";
-                button1.BackColor = Color.White;
-                nrArmament = nrArmament + 1;
-                Arme = new Arme(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text);
-                adminArmament.AddArmament(Arme);
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
+
+
+                if (textBox1.Text.Any(c=> char.IsDigit(c)))
+                {
+                    textBox1.BackColor = Color.FromArgb(250, 220, 217);
+                    ok = 0;
+                }
+                if (textBox2.Text.Any(c => char.IsDigit(c)))
+                {
+                    textBox2.BackColor = Color.FromArgb(250, 220, 217);
+                    ok = 0;
+                }
+                if (textBox3.Text.Any(c => char.IsDigit(c)))
+                {
+                    textBox3.BackColor = Color.FromArgb(250, 220, 217);
+                    ok = 0;
+                }
+
+                if (textBox4.Text.Any(c => char.IsDigit(c)))
+                {
+                    textBox4.BackColor = Color.FromArgb(250, 220, 217);
+                    ok = 0;
+                }
+
+                if (textBox5.Text.Any(c => char.IsDigit(c)))
+                {
+                    textBox5.BackColor = Color.FromArgb(250, 220, 217);
+                    ok = 0;
+                }
+
+                if (!int.TryParse(textBox6.Text, out _))
+                {
+                    textBox6.BackColor = Color.FromArgb(250, 220, 217);
+                    ok = 0;
+                }
+
+                if (ok==1)
+                {
+                    button1.Text = "S-a trimis.";
+                    button1.BackColor = Color.White;
+                    nrArmament = nrArmament + 1;
+                    Arme = new Arme(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text);
+                    adminArmament.AddArmament(Arme);
+
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    textBox5.Text = "";
+                    textBox6.Text = "";
+                }
+               if(ok==0)
+                {
+                    button1.Text = "Datele nu sunt valide!";
+                    button1.BackColor = Color.FromArgb(250, 220, 217);
+                }
 
 
             }
+            else
+            {
+                button1.Text = "Completati toate datele!";
+                button1.BackColor = Color.FromArgb(250, 220, 217);
+                if (textBox1.Text.Length == 0)
+                    textBox1.BackColor = Color.FromArgb(250, 220, 217);
+
+                if (textBox2.Text.Length == 0)
+                    textBox2.BackColor = Color.FromArgb(250, 220, 217);
+
+                if (textBox3.Text.Length == 0)
+                    textBox3.BackColor = Color.FromArgb(250, 220, 217);
+                if (textBox4.Text.Length == 0)
+                    textBox4.BackColor = Color.FromArgb(250, 220, 217);
+                if (textBox5.Text.Length == 0)
+                    textBox5.BackColor = Color.FromArgb(250, 220, 217);
+
+                if (textBox6.Text.Length == 0)
+                    textBox6.BackColor = Color.FromArgb(250, 220, 217);
+
+            }
+
+
             button1.Left = (this.ClientSize.Width - button1.Width) / 2;
         }
 
@@ -110,6 +180,11 @@ namespace Design_template.Forms
                 textBox5.BackColor = Color.White;
             else
                 textBox5.BackColor = Color.AliceBlue;
+        }
+
+        private void InregistrareArme_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)

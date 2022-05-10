@@ -14,11 +14,11 @@ namespace Armament
         private const int NRARMAMENT = 5;
         public enum Categorie_armament
         {
-            Artilerie=1,
-            Antitanc=2,
-            Antiaerian=3,
-            Infanterie=4,
-            Genistic=5
+            Artilerie = 1,
+            Antitanc = 2,
+            Antiaerian = 3,
+            Infanterie = 4,
+            Genistic = 5
         }
 
         public string CategorieArmament { get; set; } //Armament de infanterie
@@ -69,7 +69,7 @@ namespace Armament
         }
 
         /*------------Inceput metode GET/SET  -----------------*/
-       
+
 
         public string InformatiiArmament()
         {
@@ -93,9 +93,11 @@ namespace Armament
                 SEPARATOR_PRINCIPAL_FISIER, (CategorieArmament ?? " NECUNOSCUT "), (Model ?? " NECUNOSCUT "), (Tip ?? " NECUNOSCUT "), (Calibru ?? " NECUNOSCUT "), (Detalii ?? " NECUNOSCUT "), (NumarArmament ?? " NECUNOSCUT "));
 
             return obiectStudentPentruFisier;
-        
-        /*------------Sfarsit memode-----------------*/
+
+            /*------------Sfarsit memode-----------------*/
+        }
     }
+
 }
 
 

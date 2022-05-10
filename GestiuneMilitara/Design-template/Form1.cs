@@ -112,6 +112,11 @@ namespace Design_template
             Application.Exit();
         }
 
+        private void panelDesktopPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void buttonAfisare_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.AfisareSoldati(), sender);
