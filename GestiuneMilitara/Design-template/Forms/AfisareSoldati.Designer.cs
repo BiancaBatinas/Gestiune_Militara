@@ -31,12 +31,13 @@ namespace Design_template.Forms
         {
             this.SuspendLayout();
             // 
-            // Afisare
+            // AfisareSoldati
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Afisare";
+            this.Name = "AfisareSoldati";
             this.Text = "Afisare";
             this.Load += new System.EventHandler(this.Afisare_Load);
             this.Resize += new System.EventHandler(this.Afisare_Resize);
