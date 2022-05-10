@@ -1,7 +1,7 @@
 ﻿
 namespace Design_template
 {
-    partial class Form1
+    partial class lblTitle
     {
         /// <summary>
         /// Required designer variable.
@@ -29,61 +29,198 @@ namespace Design_template
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.soldatiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.armamentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAfisare = new System.Windows.Forms.Button();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.lblTitl = new System.Windows.Forms.Label();
+            this.panelDesktopPanel = new System.Windows.Forms.Panel();
+            this.panelMenu.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            this.panelTitleBar.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // panelMenu
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.soldatiToolStripMenuItem1,
-            this.armamentToolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.button3);
+            this.panelMenu.Controls.Add(this.button2);
+            this.panelMenu.Controls.Add(this.button1);
+            this.panelMenu.Controls.Add(this.buttonAfisare);
+            this.panelMenu.Controls.Add(this.panelLogo);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(204, 554);
+            this.panelMenu.TabIndex = 1;
+            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
-            // soldatiToolStripMenuItem1
+            // button3
             // 
-            this.soldatiToolStripMenuItem1.Name = "soldatiToolStripMenuItem1";
-            this.soldatiToolStripMenuItem1.Size = new System.Drawing.Size(55, 20);
-            this.soldatiToolStripMenuItem1.Text = "Soldati";
-            this.soldatiToolStripMenuItem1.Click += new System.EventHandler(this.soldatiToolStripMenuItem1_Click);
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.Image = global::Design_template.Properties.Resources.value;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 260);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(204, 60);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Exit";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // armamentToolStripMenuItem1
+            // button2
             // 
-            this.armamentToolStripMenuItem1.Name = "armamentToolStripMenuItem1";
-            this.armamentToolStripMenuItem1.Size = new System.Drawing.Size(76, 20);
-            this.armamentToolStripMenuItem1.Text = "Armament";
-            this.armamentToolStripMenuItem1.Click += new System.EventHandler(this.armamentToolStripMenuItem1_Click);
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Image = global::Design_template.Properties.Resources.value;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 200);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(204, 60);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Inregistrare";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form1
+            // button1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Image = global::Design_template.Properties.Resources.value;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 140);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(204, 60);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Afisare arme";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonAfisare
+            // 
+            this.buttonAfisare.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonAfisare.FlatAppearance.BorderSize = 0;
+            this.buttonAfisare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAfisare.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonAfisare.Image = global::Design_template.Properties.Resources.value;
+            this.buttonAfisare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAfisare.Location = new System.Drawing.Point(0, 80);
+            this.buttonAfisare.Name = "buttonAfisare";
+            this.buttonAfisare.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.buttonAfisare.Size = new System.Drawing.Size(204, 60);
+            this.buttonAfisare.TabIndex = 1;
+            this.buttonAfisare.Text = "Afisare soldati";
+            this.buttonAfisare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAfisare.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonAfisare.UseVisualStyleBackColor = true;
+            this.buttonAfisare.Click += new System.EventHandler(this.buttonAfisare_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelLogo.Controls.Add(this.label2);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(204, 80);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(12, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(172, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Gestionare armata";
+            // 
+            // panelTitleBar
+            // 
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panelTitleBar.Controls.Add(this.lblTitl);
+            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitleBar.Location = new System.Drawing.Point(204, 0);
+            this.panelTitleBar.Name = "panelTitleBar";
+            this.panelTitleBar.Size = new System.Drawing.Size(863, 80);
+            this.panelTitleBar.TabIndex = 2;
+            // 
+            // lblTitl
+            // 
+            this.lblTitl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitl.AutoSize = true;
+            this.lblTitl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTitl.Location = new System.Drawing.Point(382, 25);
+            this.lblTitl.Name = "lblTitl";
+            this.lblTitl.Size = new System.Drawing.Size(88, 29);
+            this.lblTitl.TabIndex = 0;
+            this.lblTitl.Text = "HOME";
+            // 
+            // panelDesktopPanel
+            // 
+            this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktopPanel.Location = new System.Drawing.Point(204, 80);
+            this.panelDesktopPanel.Name = "panelDesktopPanel";
+            this.panelDesktopPanel.Size = new System.Drawing.Size(863, 474);
+            this.panelDesktopPanel.TabIndex = 3;
+            // 
+            // lblTitle
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.panelDesktopPanel);
+            this.Controls.Add(this.panelTitleBar);
+            this.Controls.Add(this.panelMenu);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "lblTitle";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResizeEnd += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.panelMenu.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            this.panelLogo.PerformLayout();
+            this.panelTitleBar.ResumeLayout(false);
+            this.panelTitleBar.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
- 
-        private System.Windows.Forms.ToolStripMenuItem soldatiToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem armamentToolStripMenuItem1;
+        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Button buttonAfisare;
+        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panelTitleBar;
+        private System.Windows.Forms.Label lblTitl;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panelDesktopPanel;
     }
 }
 
