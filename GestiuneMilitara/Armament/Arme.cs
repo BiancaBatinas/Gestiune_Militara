@@ -26,7 +26,7 @@ namespace Armament
         public string Tip { get; set; }
         public string Calibru { get; set; }
         public string Detalii { get; set; }
-        public int NumarArmament { get; set; }
+        public string NumarArmament { get; set; }
 
         /*------------Sfarsit date membre-----------------*/
 
@@ -38,10 +38,10 @@ namespace Armament
             Tip = string.Empty;
             Calibru = string.Empty;
             Detalii = string.Empty;
-            NumarArmament = 0;
+            NumarArmament = string.Empty;
         }
 
-        public Arme(string _Categorie, string _Model, string _Tip, string _Calibru, string _Detalii, int _NumarArmament)
+        public Arme(string _Categorie, string _Model, string _Tip, string _Calibru, string _Detalii, string _NumarArmament)
         {
             CategorieArmament = _Categorie;
             Model = _Model;
@@ -65,7 +65,7 @@ namespace Armament
             Console.WriteLine("Introduceti detalii:");
             Detalii = Console.ReadLine();
             Console.WriteLine("Introduceti cantitatea:");
-            NumarArmament = Console.Read();
+            NumarArmament = Console.ReadLine();
         }
 
         /*------------Inceput metode GET/SET  -----------------*/
@@ -84,16 +84,16 @@ namespace Armament
             Tip = dateFisier[TIP];
             Calibru = dateFisier[CALIBRU];
             Detalii = dateFisier[DETALII];
-            NumarArmament = Convert.ToInt32(dateFisier[NRARMAMENT]);
+            NumarArmament = dateFisier[NRARMAMENT];
         }
 
         public string ConversieLaSir_PentruFisier_armament()
         {
             string obiectStudentPentruFisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}",
-                SEPARATOR_PRINCIPAL_FISIER, (CategorieArmament ?? " NECUNOSCUT "), (Model ?? " NECUNOSCUT "), (Tip ?? " NECUNOSCUT "), (Calibru ?? " NECUNOSCUT "), (Detalii ?? " NECUNOSCUT "), NumarArmament.ToString());
+                SEPARATOR_PRINCIPAL_FISIER, (CategorieArmament ?? " NECUNOSCUT "), (Model ?? " NECUNOSCUT "), (Tip ?? " NECUNOSCUT "), (Calibru ?? " NECUNOSCUT "), (Detalii ?? " NECUNOSCUT "), (NumarArmament ?? " NECUNOSCUT "));
 
             return obiectStudentPentruFisier;
-        }
+        
         /*------------Sfarsit memode-----------------*/
     }
 }

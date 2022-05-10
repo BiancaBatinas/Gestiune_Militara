@@ -16,9 +16,9 @@ using System.Configuration;
 
 namespace Design_template.Forms
 {
-    public partial class InregistrareSoldati : Form
-         
+    public partial class InregistrareArme : Form
     {
+
         bool compara = false;
         int marime = 0;
         Administrare_informatii adminMilitari, adminArmament;
@@ -27,8 +27,7 @@ namespace Design_template.Forms
         int nrArmament = 0;
         Soldati soldat = new Soldati();
         Arme Arme = new Arme();
-
-        public InregistrareSoldati()
+        public InregistrareArme()
         {
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
             string locatieFisierSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
@@ -40,8 +39,8 @@ namespace Design_template.Forms
             adminArmament = new Administrare_informatii(caleCompletaFisier_arme);
 
             adminMilitari = new Administrare_informatii(caleCompletaFisier);
-           
-            adminMilitari.GetSoldati(out nrSoldati);
+
+            adminArmament.Get_Armament(out nrArmament);
             InitializeComponent();
         }
 
@@ -53,18 +52,19 @@ namespace Design_template.Forms
                 button1.Width = 2 * button1.Width;
                 compara = true;
             }
-            if (textBox1.Text.Length != 0 && textBox2.Text.Length != 0 && textBox3.Text.Length != 0 && textBox4.Text.Length != 0 && textBox5.Text.Length != 0)
+            if (textBox1.Text.Length != 0 && textBox2.Text.Length != 0 && textBox3.Text.Length != 0 && textBox4.Text.Length != 0 && textBox5.Text.Length != 0 && textBox6.Text.Length != 0)
             {
                 button1.Text = "S-a trimis.";
                 button1.BackColor = Color.White;
-                nrSoldati = nrSoldati + 1;
-                soldat = new Soldati(textBox1.Text, textBox2.Text, textBox3.Text, textBox5.Text, textBox4.Text);
-                adminMilitari.AddSoldat(soldat);
+                nrArmament = nrArmament + 1;
+                Arme = new Arme(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text);
+                adminArmament.AddArmament(Arme);
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
                 textBox5.Text = "";
+                textBox6.Text = "";
 
 
             }
@@ -78,9 +78,10 @@ namespace Design_template.Forms
             else
                 textBox1.BackColor = Color.AliceBlue;
         }
+    
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
+    private void textBox2_TextChanged(object sender, EventArgs e)
+    {
             if (textBox2.Text.Length != 0)
                 textBox2.BackColor = Color.White;
             else
@@ -109,6 +110,14 @@ namespace Design_template.Forms
                 textBox5.BackColor = Color.White;
             else
                 textBox5.BackColor = Color.AliceBlue;
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox6.Text.Length != 0)
+                textBox6.BackColor = Color.White;
+            else
+                textBox6.BackColor = Color.AliceBlue;
         }
     }
 }

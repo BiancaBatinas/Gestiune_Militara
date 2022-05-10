@@ -1,4 +1,7 @@
 bianca;ioana;2342423;10.04.2001;regiment 1;
 calin;ursu;22423423432;03.04.2001;43535345;
 bianca;ioana;2342423;10.04.2001;regiment 1;
-calin;ursu;22423423432;03.04.2001;43535345;
+calin;ursu;22423423432;03.04.2001;43535345;;;;;;
+sgsg;gdfgdf;dgfg;dfg;gdfg;
+bianca;ioana;19.03.20;regiment 90;4893849573535;
+fwreg;gerg;gerg;ge;ge;

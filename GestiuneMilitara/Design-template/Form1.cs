@@ -106,8 +106,12 @@ namespace Design_template
                 }
             }
         }
-       
-      
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void buttonAfisare_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.AfisareSoldati(), sender);
@@ -123,12 +127,12 @@ namespace Design_template
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.InregistrareSoldati(), sender);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            OpenChildForm(new Forms.InregistrareArme(), sender);
         }
         private void DisableButton()
         {

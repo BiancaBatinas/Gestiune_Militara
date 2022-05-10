@@ -66,6 +66,12 @@
     <Compile Include="Forms\AfisareArmament.Designer.cs">
       <DependentUpon>AfisareArmament.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InregistrareArme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InregistrareArme.Designer.cs">
+      <DependentUpon>InregistrareArme.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InregistrareSoldati.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AfisareArmament.resx">
       <DependentUpon>AfisareArmament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InregistrareArme.resx">
+      <DependentUpon>InregistrareArme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InregistrareSoldati.resx">
       <DependentUpon>InregistrareSoldati.cs</DependentUpon>

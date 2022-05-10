@@ -1,1 +1,2 @@
 categ;p70;pistol;12pp;nu sunt ok;54;
+;;;;;0;
