@@ -21,6 +21,15 @@ namespace Armament
             Genistic = 5
         }
 
+        [Flags]
+        enum MultiInfo : short
+        {
+            Culoare = 0,
+            Greutate = 1,
+            Dimensiune=2
+
+        };
+
         public string CategorieArmament { get; set; } //Armament de infanterie
         public string Model { get; set; }
         public string Tip { get; set; }
@@ -50,6 +59,7 @@ namespace Armament
             Detalii = _Detalii;
             NumarArmament = _NumarArmament;
         }
+
 
         public void Citire_Armament()
         {   /* Pentru categoria de arme se poate face o enumeratie din cate sa aleaga dintre cele 8-9 variante. 

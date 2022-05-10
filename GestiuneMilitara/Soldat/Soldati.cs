@@ -20,7 +20,17 @@ namespace Soldat
             F=6,
             M=5
         }
-       public string Nume { get; set; }
+
+        [Flags]
+        enum Multi : short
+        {
+            Inaltime = 0,
+            Culoare_Par = 1,
+            Boli = 2,
+            Scoala = 4,
+          
+        };
+        public string Nume { get; set; }
         public string CNP { get; set; }
         public string Prenume { get; set; }
        public string DataNasterii { get; set; }
