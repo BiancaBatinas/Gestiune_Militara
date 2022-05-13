@@ -30,19 +30,23 @@ namespace Design_template
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.lblTitl = new System.Windows.Forms.Label();
-            this.panelDesktopPanel = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonAfisare = new System.Windows.Forms.Button();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.lblTitl = new System.Windows.Forms.Label();
+            this.panelDesktopPanel = new System.Windows.Forms.Panel();
+            this.lblafisare = new System.Windows.Forms.Label();
+            this.txtBox = new System.Windows.Forms.TextBox();
+            this.btnCauta = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
+            this.panelDesktopPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -60,59 +64,6 @@ namespace Design_template
             this.panelMenu.Size = new System.Drawing.Size(204, 554);
             this.panelMenu.TabIndex = 1;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panelLogo.Controls.Add(this.label2);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(204, 80);
-            this.panelLogo.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(12, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(172, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Gestionare armata";
-            // 
-            // panelTitleBar
-            // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.panelTitleBar.Controls.Add(this.lblTitl);
-            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(204, 0);
-            this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(863, 80);
-            this.panelTitleBar.TabIndex = 2;
-            // 
-            // lblTitl
-            // 
-            this.lblTitl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitl.AutoSize = true;
-            this.lblTitl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitl.Location = new System.Drawing.Point(382, 25);
-            this.lblTitl.Name = "lblTitl";
-            this.lblTitl.Size = new System.Drawing.Size(88, 29);
-            this.lblTitl.TabIndex = 0;
-            this.lblTitl.Text = "HOME";
-            // 
-            // panelDesktopPanel
-            // 
-            this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPanel.Location = new System.Drawing.Point(204, 80);
-            this.panelDesktopPanel.Name = "panelDesktopPanel";
-            this.panelDesktopPanel.Size = new System.Drawing.Size(863, 474);
-            this.panelDesktopPanel.TabIndex = 3;
-            this.panelDesktopPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktopPanel_Paint);
             // 
             // button4
             // 
@@ -209,6 +160,88 @@ namespace Design_template
             this.buttonAfisare.UseVisualStyleBackColor = true;
             this.buttonAfisare.Click += new System.EventHandler(this.buttonAfisare_Click);
             // 
+            // panelLogo
+            // 
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelLogo.Controls.Add(this.label2);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(204, 80);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(12, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(172, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Gestionare armata";
+            // 
+            // panelTitleBar
+            // 
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panelTitleBar.Controls.Add(this.lblTitl);
+            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitleBar.Location = new System.Drawing.Point(204, 0);
+            this.panelTitleBar.Name = "panelTitleBar";
+            this.panelTitleBar.Size = new System.Drawing.Size(863, 80);
+            this.panelTitleBar.TabIndex = 2;
+            // 
+            // lblTitl
+            // 
+            this.lblTitl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitl.AutoSize = true;
+            this.lblTitl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTitl.Location = new System.Drawing.Point(382, 25);
+            this.lblTitl.Name = "lblTitl";
+            this.lblTitl.Size = new System.Drawing.Size(88, 29);
+            this.lblTitl.TabIndex = 0;
+            this.lblTitl.Text = "HOME";
+            // 
+            // panelDesktopPanel
+            // 
+            this.panelDesktopPanel.Controls.Add(this.lblafisare);
+            this.panelDesktopPanel.Controls.Add(this.txtBox);
+            this.panelDesktopPanel.Controls.Add(this.btnCauta);
+            this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktopPanel.Location = new System.Drawing.Point(204, 80);
+            this.panelDesktopPanel.Name = "panelDesktopPanel";
+            this.panelDesktopPanel.Size = new System.Drawing.Size(863, 474);
+            this.panelDesktopPanel.TabIndex = 3;
+            this.panelDesktopPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktopPanel_Paint);
+            // 
+            // lblafisare
+            // 
+            this.lblafisare.AutoSize = true;
+            this.lblafisare.Location = new System.Drawing.Point(503, 31);
+            this.lblafisare.Name = "lblafisare";
+            this.lblafisare.Size = new System.Drawing.Size(0, 17);
+            this.lblafisare.TabIndex = 2;
+            // 
+            // txtBox
+            // 
+            this.txtBox.Location = new System.Drawing.Point(229, 418);
+            this.txtBox.Name = "txtBox";
+            this.txtBox.Size = new System.Drawing.Size(230, 22);
+            this.txtBox.TabIndex = 1;
+            this.txtBox.TextChanged += new System.EventHandler(this.txt_TextChanged);
+            // 
+            // btnCauta
+            // 
+            this.btnCauta.Location = new System.Drawing.Point(53, 410);
+            this.btnCauta.Name = "btnCauta";
+            this.btnCauta.Size = new System.Drawing.Size(149, 38);
+            this.btnCauta.TabIndex = 0;
+            this.btnCauta.Text = "Cauta";
+            this.btnCauta.UseVisualStyleBackColor = true;
+            this.btnCauta.Click += new System.EventHandler(this.btnCauta_Click);
+            // 
             // lblTitle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -227,6 +260,8 @@ namespace Design_template
             this.panelLogo.PerformLayout();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            this.panelDesktopPanel.ResumeLayout(false);
+            this.panelDesktopPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -244,6 +279,9 @@ namespace Design_template
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelDesktopPanel;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnCauta;
+        private System.Windows.Forms.TextBox txtBox;
+        private System.Windows.Forms.Label lblafisare;
     }
 }
 

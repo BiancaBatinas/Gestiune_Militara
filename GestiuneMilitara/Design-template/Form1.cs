@@ -37,7 +37,10 @@ namespace Design_template
         private const int DIMENSIUNE_PAS_Y = 50;
 
         private const int DIMENSIUNE_PAS_X = 120;
+      
 
+        int nrSoldati = 0;
+        int nrArmament = 0;
         private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
 
@@ -56,8 +59,19 @@ namespace Design_template
        
         public lblTitle()
         {
+            string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
+            string locatieFisierSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string caleCompletaFisier = locatieFisierSolutie + "\\" + numeFisier;
 
-            
+            string _numeFisier = ConfigurationManager.AppSettings["_NumeFisier"];
+            string locatieFisierSolutie1 = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string caleCompletaFisier_arme = locatieFisierSolutie1 + "\\" + _numeFisier;
+            adminArmament = new Administrare_informatii(caleCompletaFisier_arme);
+
+            adminMilitari = new Administrare_informatii(caleCompletaFisier);
+
+            adminArmament.Get_Armament(out nrArmament);
+
             InitializeComponent();
             random = new Random();
            // btnCloseChildForm.Visible = false;
@@ -113,6 +127,18 @@ namespace Design_template
         }
 
         private void panelDesktopPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCauta_Click(object sender, EventArgs e)
+        {
+
+
+            lblafisare.Text = adminMilitari.Cautare_in_fisier(txtBox.Text).ConversieLaSir_PentruFisier();
+        }
+
+        private void txt_TextChanged(object sender, EventArgs e)
         {
 
         }
