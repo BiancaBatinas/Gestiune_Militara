@@ -42,7 +42,10 @@ namespace Design_template.Forms
             adminMilitari = new Administrare_informatii(caleCompletaFisier);
            
             adminMilitari.GetSoldati(out nrSoldati);
+
             InitializeComponent();
+           
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -170,7 +173,22 @@ namespace Design_template.Forms
             else
                 textBox5.BackColor = Color.AliceBlue;
         }
-       
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox1.BackColor = Color.White;
+            textBox2.Text = "";
+            textBox2.BackColor = Color.White;
+            textBox3.Text = "";
+            textBox3.BackColor = Color.White;
+            textBox4.Text = "";
+            textBox4.BackColor = Color.White;
+            textBox5.Text = "";
+            textBox5.BackColor = Color.White;
+         
+        }
+
         private void LoadTheme()
         {
             foreach (Control btns in this.Controls)
@@ -183,7 +201,13 @@ namespace Design_template.Forms
                     btn.FlatAppearance.BorderColor = CuloriTema.SecondaryColor;
                 }
             }
-            
+
+            Nume.ForeColor = CuloriTema.PrimaryColor;
+            Prenume.ForeColor = CuloriTema.PrimaryColor;
+            Data.ForeColor = CuloriTema.PrimaryColor;
+            cnp.ForeColor = CuloriTema.PrimaryColor;
+            Unitate.ForeColor = CuloriTema.PrimaryColor;
+            buttonCancel.BackColor = CuloriTema.SecondaryColor;
         }
     }
 }

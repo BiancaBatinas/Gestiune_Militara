@@ -40,6 +40,7 @@ namespace Design_template.Forms
             this.Unitate = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -142,12 +143,23 @@ namespace Design_template.Forms
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Location = new System.Drawing.Point(331, 371);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(170, 32);
+            this.buttonCancel.TabIndex = 11;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
             // InregistrareSoldati
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Unitate);
             this.Controls.Add(this.textBox5);
@@ -180,5 +192,6 @@ namespace Design_template.Forms
         private System.Windows.Forms.Label Unitate;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }

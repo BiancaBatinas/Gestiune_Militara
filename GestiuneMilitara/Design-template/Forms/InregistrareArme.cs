@@ -199,7 +199,30 @@ namespace Design_template.Forms
                     btn.FlatAppearance.BorderColor = CuloriTema.SecondaryColor;
                 }
             }
+            Categorie.ForeColor = CuloriTema.PrimaryColor;
+            Model.ForeColor = CuloriTema.PrimaryColor;
+            Tip.ForeColor = CuloriTema.PrimaryColor;
+            Calibru.ForeColor = CuloriTema.PrimaryColor;
+            Detalii.ForeColor = CuloriTema.PrimaryColor;
+            Cantitate.ForeColor = CuloriTema.PrimaryColor;
+            buttonCancel.BackColor = CuloriTema.SecondaryColor;
 
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox1.BackColor = Color.White;
+            textBox2.Text = "";
+            textBox2.BackColor = Color.White;
+            textBox3.Text = "";
+            textBox3.BackColor = Color.White;
+            textBox4.Text = "";
+            textBox4.BackColor = Color.White;
+            textBox5.Text = "";
+            textBox5.BackColor = Color.White;
+            textBox6.Text = "";
+            textBox6.BackColor = Color.White;
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)

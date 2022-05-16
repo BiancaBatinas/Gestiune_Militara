@@ -30,18 +30,19 @@ namespace Design_template.Forms
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.Unitate = new System.Windows.Forms.Label();
+            this.Detalii = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.cnp = new System.Windows.Forms.Label();
+            this.Calibru = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.Data = new System.Windows.Forms.Label();
+            this.Tip = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.Prenume = new System.Windows.Forms.Label();
+            this.Model = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.Nume = new System.Windows.Forms.Label();
+            this.Categorie = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Cantitate = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -54,15 +55,15 @@ namespace Design_template.Forms
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Unitate
+            // Detalii
             // 
-            this.Unitate.AutoSize = true;
-            this.Unitate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Unitate.Location = new System.Drawing.Point(39, 231);
-            this.Unitate.Name = "Unitate";
-            this.Unitate.Size = new System.Drawing.Size(62, 20);
-            this.Unitate.TabIndex = 20;
-            this.Unitate.Text = "Detalii:";
+            this.Detalii.AutoSize = true;
+            this.Detalii.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Detalii.Location = new System.Drawing.Point(39, 231);
+            this.Detalii.Name = "Detalii";
+            this.Detalii.Size = new System.Drawing.Size(62, 20);
+            this.Detalii.TabIndex = 20;
+            this.Detalii.Text = "Detalii:";
             // 
             // textBox5
             // 
@@ -72,15 +73,15 @@ namespace Design_template.Forms
             this.textBox5.TabIndex = 19;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // cnp
+            // Calibru
             // 
-            this.cnp.AutoSize = true;
-            this.cnp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cnp.Location = new System.Drawing.Point(45, 181);
-            this.cnp.Name = "cnp";
-            this.cnp.Size = new System.Drawing.Size(67, 20);
-            this.cnp.TabIndex = 18;
-            this.cnp.Text = "Calibru:";
+            this.Calibru.AutoSize = true;
+            this.Calibru.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Calibru.Location = new System.Drawing.Point(45, 181);
+            this.Calibru.Name = "Calibru";
+            this.Calibru.Size = new System.Drawing.Size(67, 20);
+            this.Calibru.TabIndex = 18;
+            this.Calibru.Text = "Calibru:";
             // 
             // textBox4
             // 
@@ -90,15 +91,15 @@ namespace Design_template.Forms
             this.textBox4.TabIndex = 17;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // Data
+            // Tip
             // 
-            this.Data.AutoSize = true;
-            this.Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Data.Location = new System.Drawing.Point(53, 133);
-            this.Data.Name = "Data";
-            this.Data.Size = new System.Drawing.Size(37, 20);
-            this.Data.TabIndex = 16;
-            this.Data.Text = "Tip:";
+            this.Tip.AutoSize = true;
+            this.Tip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tip.Location = new System.Drawing.Point(53, 133);
+            this.Tip.Name = "Tip";
+            this.Tip.Size = new System.Drawing.Size(37, 20);
+            this.Tip.TabIndex = 16;
+            this.Tip.Text = "Tip:";
             // 
             // textBox3
             // 
@@ -108,15 +109,15 @@ namespace Design_template.Forms
             this.textBox3.TabIndex = 15;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // Prenume
+            // Model
             // 
-            this.Prenume.AutoSize = true;
-            this.Prenume.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Prenume.Location = new System.Drawing.Point(50, 89);
-            this.Prenume.Name = "Prenume";
-            this.Prenume.Size = new System.Drawing.Size(59, 20);
-            this.Prenume.TabIndex = 14;
-            this.Prenume.Text = "Model:";
+            this.Model.AutoSize = true;
+            this.Model.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Model.Location = new System.Drawing.Point(50, 89);
+            this.Model.Name = "Model";
+            this.Model.Size = new System.Drawing.Size(59, 20);
+            this.Model.TabIndex = 14;
+            this.Model.Text = "Model:";
             // 
             // textBox2
             // 
@@ -126,15 +127,15 @@ namespace Design_template.Forms
             this.textBox2.TabIndex = 13;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // Nume
+            // Categorie
             // 
-            this.Nume.AutoSize = true;
-            this.Nume.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nume.Location = new System.Drawing.Point(39, 45);
-            this.Nume.Name = "Nume";
-            this.Nume.Size = new System.Drawing.Size(86, 20);
-            this.Nume.TabIndex = 12;
-            this.Nume.Text = "Categorie:";
+            this.Categorie.AutoSize = true;
+            this.Categorie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Categorie.Location = new System.Drawing.Point(39, 45);
+            this.Categorie.Name = "Categorie";
+            this.Categorie.Size = new System.Drawing.Size(86, 20);
+            this.Categorie.TabIndex = 12;
+            this.Categorie.Text = "Categorie:";
             // 
             // textBox1
             // 
@@ -144,15 +145,15 @@ namespace Design_template.Forms
             this.textBox1.TabIndex = 11;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // label1
+            // Cantitate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 285);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 20);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Cantitate:";
+            this.Cantitate.AutoSize = true;
+            this.Cantitate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cantitate.Location = new System.Drawing.Point(31, 285);
+            this.Cantitate.Name = "Cantitate";
+            this.Cantitate.Size = new System.Drawing.Size(81, 20);
+            this.Cantitate.TabIndex = 23;
+            this.Cantitate.Text = "Cantitate:";
             // 
             // textBox6
             // 
@@ -162,23 +163,34 @@ namespace Design_template.Forms
             this.textBox6.TabIndex = 22;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Location = new System.Drawing.Point(331, 405);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(179, 35);
+            this.buttonCancel.TabIndex = 24;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
             // InregistrareArme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(800, 473);
+            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.Cantitate);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.Unitate);
+            this.Controls.Add(this.Detalii);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.cnp);
+            this.Controls.Add(this.Calibru);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.Data);
+            this.Controls.Add(this.Tip);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.Prenume);
+            this.Controls.Add(this.Model);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.Nume);
+            this.Controls.Add(this.Categorie);
             this.Controls.Add(this.textBox1);
             this.Name = "InregistrareArme";
             this.Text = "InregistrareArme";
@@ -191,17 +203,18 @@ namespace Design_template.Forms
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label Unitate;
+        private System.Windows.Forms.Label Detalii;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label cnp;
+        private System.Windows.Forms.Label Calibru;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label Data;
+        private System.Windows.Forms.Label Tip;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label Prenume;
+        private System.Windows.Forms.Label Model;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label Nume;
+        private System.Windows.Forms.Label Categorie;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Cantitate;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }
