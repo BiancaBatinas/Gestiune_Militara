@@ -189,6 +189,11 @@ namespace Design_template.Forms
          
         }
 
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void LoadTheme()
         {
             foreach (Control btns in this.Controls)

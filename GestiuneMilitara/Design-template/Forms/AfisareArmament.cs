@@ -25,8 +25,9 @@ namespace Design_template.Forms
         private const int DIMENSIUNE_PAS_Y = 50;
 
         private const int DIMENSIUNE_PAS_X = 100;
-
+        Arme[] arme;
         DataTable table;
+        int indexRow;
         public AfisareArmament()
         {
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
@@ -39,11 +40,15 @@ namespace Design_template.Forms
             adminArmament = new Administrare_informatii(caleCompletaFisier_arme);
 
             adminMilitari = new Administrare_informatii(caleCompletaFisier);
+            
             InitializeComponent();
         }
+       
+
         private void AfiseazaArmament()
         {
-            Arme[] arme = adminArmament.Get_Armament(out int nrArme);
+            arme = adminArmament.Get_Armament(out int nrArme);
+
             table = new DataTable();
             int i = 1;
 
@@ -62,7 +67,7 @@ namespace Design_template.Forms
                 i++;
                 dataGridAfisareArmament.DataSource = table;
 
-            }//, armament.CategorieArmament, armament.Model, armament.Tip, armament.Calibru, armament.Detalii, armament.NumarArmament
+            }
         }
   
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -77,13 +82,89 @@ namespace Design_template.Forms
         {
            
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            DataGridViewRow newDataRow = dataGridAfisareArmament.Rows[indexRow];
+            newDataRow.Cells[0].Value = textID.Text;
+            newDataRow.Cells[1].Value = textCategorie.Text;
+            newDataRow.Cells[2].Value = textModel.Text;
+            newDataRow.Cells[3].Value = textTip.Text;
+            newDataRow.Cells[4].Value = textCalibru.Text;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridAfisareArmament_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridAfisareArmament.Rows[e.RowIndex];
+                textID.Text = row.Cells[0].Value.ToString();
+                textCategorie.Text = row.Cells[1].Value.ToString();
+                textModel.Text = row.Cells[2].Value.ToString();
+                textTip.Text = row.Cells[3].Value.ToString();
+                textCalibru.Text = row.Cells[4].Value.ToString();
+            }
+        }
+
+            private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(panelRefresh.Width ==230)
+            {
+                for(int i=0; i<10; i++)
+                {
+                    panelRefresh.Width = panelRefresh.Width - 23;
+                }
+            }
+            else
+            {
+
+                for (int i = 0; i < 10; i++)
+                {
+                    panelRefresh.Width = panelRefresh.Width + 23;
+                }
+            }
+            timer1.Stop();
+        }
+
+        private void textID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void AfisareArmament_Load(object sender, EventArgs e)
         {
-           
+            LoadTheme();
+            panelRefresh.Width = 0;
             AfiseazaArmament();
+          
         }
 
-        
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = CuloriTema.PrimaryColor;
+                    btn.ForeColor = Color.Black;
+                    btn.FlatAppearance.BorderColor = CuloriTema.SecondaryColor;
+                }
+            }
+            panel2.BackColor = CuloriTema.PrimaryColor;
+           panelRefresh.BackColor= CuloriTema.PrimaryColor;
+            panelRefreshContinut.BackColor= CuloriTema.PrimaryColor; ;
+
+        }
     }
 }

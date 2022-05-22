@@ -80,7 +80,7 @@ namespace Design_template
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
             //setare proprietati
-            this.Size = new Size(800, 500);
+            this.Size = new Size(900, 500);
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(100, 100);
             this.Font = new Font("Arial", 10, FontStyle.Bold);
