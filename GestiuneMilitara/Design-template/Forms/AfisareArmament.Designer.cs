@@ -30,109 +30,71 @@ namespace Design_template.Forms
         private void InitializeComponent()
         {
             this.dataGridAfisareArmament = new System.Windows.Forms.DataGridView();
-            this.c1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAfisareArmament)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridAfisareArmament
             // 
             this.dataGridAfisareArmament.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridAfisareArmament.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridAfisareArmament.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAfisareArmament.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.c1,
-            this.c2,
-            this.c3,
-            this.c4,
-            this.c5,
-            this.c6,
-            this.c7});
-            this.dataGridAfisareArmament.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridAfisareArmament.Location = new System.Drawing.Point(0, 0);
+            this.dataGridAfisareArmament.Location = new System.Drawing.Point(0, 40);
             this.dataGridAfisareArmament.Name = "dataGridAfisareArmament";
             this.dataGridAfisareArmament.RowHeadersWidth = 51;
             this.dataGridAfisareArmament.RowTemplate.Height = 24;
-            this.dataGridAfisareArmament.Size = new System.Drawing.Size(905, 450);
+            this.dataGridAfisareArmament.Size = new System.Drawing.Size(834, 453);
             this.dataGridAfisareArmament.TabIndex = 0;
             // 
-            // c1
+            // textBox1
             // 
-            this.c1.HeaderText = "ID";
-            this.c1.MinimumWidth = 6;
-            this.c1.Name = "c1";
-            this.c1.Width = 50;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(112, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(271, 22);
+            this.textBox1.TabIndex = 13;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // c2
+            // listBox1
             // 
-            this.c2.HeaderText = "Categorie";
-            this.c2.MinimumWidth = 6;
-            this.c2.Name = "c2";
-            this.c2.Width = 125;
-            // 
-            // c3
-            // 
-            this.c3.HeaderText = "Model";
-            this.c3.MinimumWidth = 6;
-            this.c3.Name = "c3";
-            this.c3.Width = 150;
-            // 
-            // c4
-            // 
-            this.c4.HeaderText = "Tip";
-            this.c4.MinimumWidth = 6;
-            this.c4.Name = "c4";
-            this.c4.Width = 125;
-            // 
-            // c5
-            // 
-            this.c5.HeaderText = "Calibru";
-            this.c5.MinimumWidth = 6;
-            this.c5.Name = "c5";
-            this.c5.Width = 125;
-            // 
-            // c6
-            // 
-            this.c6.HeaderText = "Detalii";
-            this.c6.MinimumWidth = 6;
-            this.c6.Name = "c6";
-            this.c6.Width = 150;
-            // 
-            // c7
-            // 
-            this.c7.HeaderText = "Cantitate Armament";
-            this.c7.MinimumWidth = 6;
-            this.c7.Name = "c7";
-            this.c7.Width = 125;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Items.AddRange(new object[] {
+            "ID",
+            "Categorie",
+            "Model",
+            "Tip",
+            "Calibru",
+            "Detalii",
+            "Cantitate"});
+            this.listBox1.Location = new System.Drawing.Point(12, 12);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(94, 20);
+            this.listBox1.TabIndex = 17;
             // 
             // AfisareArmament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(905, 450);
+            this.ClientSize = new System.Drawing.Size(859, 505);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridAfisareArmament);
             this.Name = "AfisareArmament";
             this.Text = "AfisareArmament";
             this.Load += new System.EventHandler(this.AfisareArmament_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAfisareArmament)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridAfisareArmament;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c7;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

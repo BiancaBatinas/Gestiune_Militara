@@ -30,77 +30,49 @@ namespace Design_template.Forms
         private void InitializeComponent()
         {
             this.dataGridAfisareSoldati = new System.Windows.Forms.DataGridView();
-            this.c1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAfisareSoldati)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridAfisareSoldati
             // 
             this.dataGridAfisareSoldati.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridAfisareSoldati.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridAfisareSoldati.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAfisareSoldati.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.c1,
-            this.c2,
-            this.c3,
-            this.c4,
-            this.c5,
-            this.c6});
-            this.dataGridAfisareSoldati.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridAfisareSoldati.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridAfisareSoldati.Location = new System.Drawing.Point(0, 0);
+            this.dataGridAfisareSoldati.Location = new System.Drawing.Point(0, 47);
             this.dataGridAfisareSoldati.Name = "dataGridAfisareSoldati";
             this.dataGridAfisareSoldati.RowHeadersWidth = 51;
             this.dataGridAfisareSoldati.RowTemplate.Height = 24;
-            this.dataGridAfisareSoldati.Size = new System.Drawing.Size(814, 450);
+            this.dataGridAfisareSoldati.Size = new System.Drawing.Size(814, 403);
             this.dataGridAfisareSoldati.TabIndex = 0;
             this.dataGridAfisareSoldati.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // c1
+            // listBox1
             // 
-            this.c1.HeaderText = "ID";
-            this.c1.MinimumWidth = 6;
-            this.c1.Name = "c1";
-            this.c1.Width = 125;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Items.AddRange(new object[] {
+            "ID",
+            "Nume",
+            "Prenume",
+            "Data nasterii",
+            "CNP",
+            "Unitate"});
+            this.listBox1.Location = new System.Drawing.Point(10, 12);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(94, 20);
+            this.listBox1.TabIndex = 19;
             // 
-            // c2
+            // textBox1
             // 
-            this.c2.HeaderText = "Nume";
-            this.c2.MinimumWidth = 6;
-            this.c2.Name = "c2";
-            this.c2.Width = 125;
-            // 
-            // c3
-            // 
-            this.c3.HeaderText = "Prenume";
-            this.c3.MinimumWidth = 6;
-            this.c3.Name = "c3";
-            this.c3.Width = 125;
-            // 
-            // c4
-            // 
-            this.c4.HeaderText = "Data Nasterii";
-            this.c4.MinimumWidth = 6;
-            this.c4.Name = "c4";
-            this.c4.Width = 125;
-            // 
-            // c5
-            // 
-            this.c5.HeaderText = "CNP";
-            this.c5.MinimumWidth = 6;
-            this.c5.Name = "c5";
-            this.c5.Width = 125;
-            // 
-            // c6
-            // 
-            this.c6.HeaderText = "Unitate";
-            this.c6.MinimumWidth = 6;
-            this.c6.Name = "c6";
-            this.c6.Width = 200;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(110, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(271, 22);
+            this.textBox1.TabIndex = 18;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // AfisareSoldati
             // 
@@ -108,6 +80,8 @@ namespace Design_template.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(814, 450);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridAfisareSoldati);
             this.Name = "AfisareSoldati";
             this.Text = "Afisare";
@@ -115,17 +89,14 @@ namespace Design_template.Forms
             this.Resize += new System.EventHandler(this.Afisare_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAfisareSoldati)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridAfisareSoldati;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c6;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

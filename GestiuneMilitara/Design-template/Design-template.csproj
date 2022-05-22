@@ -144,5 +144,11 @@
   <ItemGroup>
     <None Include="Resources\cross-out %282%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketing_target_market_special_icon_220483.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketing_target_market_special_icon_220483.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

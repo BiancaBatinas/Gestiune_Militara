@@ -25,7 +25,8 @@ namespace Design_template.Forms
         private const int DIMENSIUNE_PAS_Y = 50;
 
         private const int DIMENSIUNE_PAS_X = 100;
-        // private Label lblNote;
+
+        DataTable table;
         public AfisareArmament()
         {
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
@@ -43,18 +44,43 @@ namespace Design_template.Forms
         private void AfiseazaArmament()
         {
             Arme[] arme = adminArmament.Get_Armament(out int nrArme);
-            
-            int i = 0;
+            table = new DataTable();
+            int i = 1;
+
+            table.Columns.Add("Id", typeof(int));
+            table.Columns.Add("Categorie", typeof(string));
+            table.Columns.Add("Model", typeof(string));
+            table.Columns.Add("Tip", typeof(string));
+            table.Columns.Add("Calibru", typeof(string));
+            table.Columns.Add("Detalii", typeof(string));
+            table.Columns.Add("Cantitate", typeof(string));
+
             foreach (Arme armament in arme)
             {
-
-                dataGridAfisareArmament.Rows.Add(new object[] { i, armament.CategorieArmament, armament.Model, armament.Tip, armament.Calibru, armament.Detalii, armament.NumarArmament });
+               
+                table.Rows.Add(new object[] { i , armament.CategorieArmament, armament.Model, armament.Tip, armament.Calibru, armament.Detalii, armament.NumarArmament });
                 i++;
-            }
+                dataGridAfisareArmament.DataSource = table;
+
+            }//, armament.CategorieArmament, armament.Model, armament.Tip, armament.Calibru, armament.Detalii, armament.NumarArmament
         }
+  
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = table.DefaultView;
+            dv.RowFilter = listBox1.SelectedItem.ToString() + " LIKE '" + textBox1.Text + "%'";
+            dataGridAfisareArmament.DataSource = dv;
+            
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
         private void AfisareArmament_Load(object sender, EventArgs e)
         {
-            
+           
             AfiseazaArmament();
         }
 
