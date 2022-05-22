@@ -121,6 +121,7 @@ namespace Design_template.Forms
                 textData.Text = row.Cells[3].Value.ToString();
                 textUnitate.Text = row.Cells[4].Value.ToString();
             }
+            indexRow = e.RowIndex;
         }
 
         private void button1_Click(object sender, EventArgs e)

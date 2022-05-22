@@ -114,6 +114,7 @@ namespace Design_template.Forms
                 textTip.Text = row.Cells[3].Value.ToString();
                 textCalibru.Text = row.Cells[4].Value.ToString();
             }
+            indexRow = e.RowIndex;
         }
 
             private void timer1_Tick(object sender, EventArgs e)
