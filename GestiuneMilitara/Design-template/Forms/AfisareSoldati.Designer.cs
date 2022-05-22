@@ -29,6 +29,7 @@ namespace Design_template.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridAfisareSoldati = new System.Windows.Forms.DataGridView();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -37,18 +38,19 @@ namespace Design_template.Forms
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textCategorie = new System.Windows.Forms.TextBox();
+            this.textNume = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textModel = new System.Windows.Forms.TextBox();
+            this.textPrenume = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textTip = new System.Windows.Forms.TextBox();
-            this.textCalibru = new System.Windows.Forms.TextBox();
+            this.textData = new System.Windows.Forms.TextBox();
+            this.textUnitate = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Update_gridCell = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAfisareSoldati)).BeginInit();
             this.panelRefresh.SuspendLayout();
             this.panelRefreshContinut.SuspendLayout();
@@ -66,8 +68,9 @@ namespace Design_template.Forms
             this.dataGridAfisareSoldati.Name = "dataGridAfisareSoldati";
             this.dataGridAfisareSoldati.RowHeadersWidth = 51;
             this.dataGridAfisareSoldati.RowTemplate.Height = 24;
-            this.dataGridAfisareSoldati.Size = new System.Drawing.Size(723, 403);
+            this.dataGridAfisareSoldati.Size = new System.Drawing.Size(723, 480);
             this.dataGridAfisareSoldati.TabIndex = 0;
+            this.dataGridAfisareSoldati.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAfisareSoldati_CellClick);
             this.dataGridAfisareSoldati.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // listBox1
@@ -124,13 +127,13 @@ namespace Design_template.Forms
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel1.Controls.Add(this.textID, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textCategorie, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.textNume, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textModel, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.textPrenume, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.textTip, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.textCalibru, 1, 12);
+            this.tableLayoutPanel1.Controls.Add(this.textData, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.textUnitate, 1, 12);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 12);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 71);
@@ -175,13 +178,13 @@ namespace Design_template.Forms
             this.label2.Text = "ID";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textCategorie
+            // textNume
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.textCategorie, 3);
-            this.textCategorie.Location = new System.Drawing.Point(13, 128);
-            this.textCategorie.Name = "textCategorie";
-            this.textCategorie.Size = new System.Drawing.Size(196, 22);
-            this.textCategorie.TabIndex = 21;
+            this.tableLayoutPanel1.SetColumnSpan(this.textNume, 3);
+            this.textNume.Location = new System.Drawing.Point(13, 128);
+            this.textNume.Name = "textNume";
+            this.textNume.Size = new System.Drawing.Size(196, 22);
+            this.textNume.TabIndex = 21;
             // 
             // label3
             // 
@@ -191,9 +194,9 @@ namespace Design_template.Forms
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.Location = new System.Drawing.Point(13, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 17);
+            this.label3.Size = new System.Drawing.Size(49, 17);
             this.label3.TabIndex = 20;
-            this.label3.Text = "Categorie";
+            this.label3.Text = "Nume";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -204,18 +207,18 @@ namespace Design_template.Forms
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label4.Location = new System.Drawing.Point(13, 185);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 17);
+            this.label4.Size = new System.Drawing.Size(72, 17);
             this.label4.TabIndex = 22;
-            this.label4.Text = "Model";
+            this.label4.Text = "Prenume";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textModel
+            // textPrenume
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.textModel, 3);
-            this.textModel.Location = new System.Drawing.Point(13, 218);
-            this.textModel.Name = "textModel";
-            this.textModel.Size = new System.Drawing.Size(196, 22);
-            this.textModel.TabIndex = 23;
+            this.tableLayoutPanel1.SetColumnSpan(this.textPrenume, 3);
+            this.textPrenume.Location = new System.Drawing.Point(13, 218);
+            this.textPrenume.Name = "textPrenume";
+            this.textPrenume.Size = new System.Drawing.Size(196, 22);
+            this.textPrenume.TabIndex = 23;
             // 
             // label5
             // 
@@ -225,26 +228,26 @@ namespace Design_template.Forms
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Location = new System.Drawing.Point(13, 275);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 17);
+            this.label5.Size = new System.Drawing.Size(106, 17);
             this.label5.TabIndex = 24;
-            this.label5.Text = "Tip";
+            this.label5.Text = "Data  nasterii";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textTip
+            // textData
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.textTip, 3);
-            this.textTip.Location = new System.Drawing.Point(13, 308);
-            this.textTip.Name = "textTip";
-            this.textTip.Size = new System.Drawing.Size(196, 22);
-            this.textTip.TabIndex = 25;
+            this.tableLayoutPanel1.SetColumnSpan(this.textData, 3);
+            this.textData.Location = new System.Drawing.Point(13, 308);
+            this.textData.Name = "textData";
+            this.textData.Size = new System.Drawing.Size(196, 22);
+            this.textData.TabIndex = 25;
             // 
-            // textCalibru
+            // textUnitate
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.textCalibru, 3);
-            this.textCalibru.Location = new System.Drawing.Point(13, 398);
-            this.textCalibru.Name = "textCalibru";
-            this.textCalibru.Size = new System.Drawing.Size(196, 22);
-            this.textCalibru.TabIndex = 26;
+            this.tableLayoutPanel1.SetColumnSpan(this.textUnitate, 3);
+            this.textUnitate.Location = new System.Drawing.Point(13, 398);
+            this.textUnitate.Name = "textUnitate";
+            this.textUnitate.Size = new System.Drawing.Size(196, 22);
+            this.textUnitate.TabIndex = 26;
             // 
             // label6
             // 
@@ -254,9 +257,9 @@ namespace Design_template.Forms
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label6.Location = new System.Drawing.Point(13, 365);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 17);
+            this.label6.Size = new System.Drawing.Size(60, 17);
             this.label6.TabIndex = 27;
-            this.label6.Text = "Calibru";
+            this.label6.Text = "Unitate";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
@@ -277,6 +280,7 @@ namespace Design_template.Forms
             this.Update_gridCell.TabIndex = 26;
             this.Update_gridCell.Text = "Modifica";
             this.Update_gridCell.UseVisualStyleBackColor = true;
+            this.Update_gridCell.Click += new System.EventHandler(this.Update_gridCell_Click);
             // 
             // label1
             // 
@@ -298,6 +302,11 @@ namespace Design_template.Forms
             this.button1.TabIndex = 26;
             this.button1.Text = "Update";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // AfisareSoldati
             // 
@@ -336,17 +345,18 @@ namespace Design_template.Forms
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox textID;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textCategorie;
+        private System.Windows.Forms.TextBox textNume;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textModel;
+        private System.Windows.Forms.TextBox textPrenume;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textTip;
-        private System.Windows.Forms.TextBox textCalibru;
+        private System.Windows.Forms.TextBox textData;
+        private System.Windows.Forms.TextBox textUnitate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button Update_gridCell;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

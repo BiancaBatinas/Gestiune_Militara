@@ -39,6 +39,8 @@ namespace Design_template.Forms
         private const int DIMENSIUNE_PAS_X = 100;
 
         DataTable table;
+        Soldati[] soldat;
+        int indexRow;
         public AfisareSoldati()
         {
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
@@ -56,9 +58,9 @@ namespace Design_template.Forms
         }
         private void AfiseazaSoldati()
         {
-            Soldati[] soldat = adminMilitari.GetSoldati(out int nrSoldati);
+           soldat = adminMilitari.GetSoldati(out int nrSoldati);
             table = new DataTable();
-            int i = 0;
+            int i = 1;
             table.Columns.Add("Id", typeof(int));
             table.Columns.Add("Nume", typeof(string));
             table.Columns.Add("Prenume", typeof(string));
@@ -82,18 +84,90 @@ namespace Design_template.Forms
             dataGridAfisareSoldati.DataSource = dv;
         }
 
+       
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (panelRefresh.Width == 230)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    panelRefresh.Width = panelRefresh.Width - 23;
+                }
+            }
+            else
+            {
+
+                for (int i = 0; i < 10; i++)
+                {
+                    panelRefresh.Width = panelRefresh.Width + 23;
+                }
+            }
+            timer1.Stop();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            
+        }
+        private void dataGridAfisareSoldati_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridAfisareSoldati.Rows[e.RowIndex];
+                textID.Text = row.Cells[0].Value.ToString();
+                textNume.Text = row.Cells[1].Value.ToString();
+                textPrenume.Text = row.Cells[2].Value.ToString();
+                textData.Text = row.Cells[3].Value.ToString();
+                textUnitate.Text = row.Cells[4].Value.ToString();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
         private void Afisare_Load(object sender, EventArgs e)
         {
-           //de adaugat label pentru cautare soldat si afisarea lui 
+            LoadTheme();
+            panelRefresh.Width = 0;
             AfiseazaSoldati();
         
 
         }
 
-        
-           
-        
+        private void Update_gridCell_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow newDataRow = dataGridAfisareSoldati.Rows[indexRow];
+            newDataRow.Cells[0].Value = textID.Text;
+            newDataRow.Cells[1].Value = textNume.Text;
+            newDataRow.Cells[2].Value = textPrenume.Text;
+            newDataRow.Cells[3].Value = textData.Text;
+            newDataRow.Cells[4].Value = textUnitate.Text;
+        }
 
-       
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = CuloriTema.PrimaryColor;
+                    btn.ForeColor = Color.Black;
+                    btn.FlatAppearance.BorderColor = CuloriTema.SecondaryColor;
+                }
+            }
+            panel2.BackColor = CuloriTema.PrimaryColor;
+            panelRefresh.BackColor = CuloriTema.PrimaryColor;
+            panelRefreshContinut.BackColor = CuloriTema.PrimaryColor; ;
+
+        }
+
+
+
+
+
     }
 }
